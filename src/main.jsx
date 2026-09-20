@@ -65,14 +65,14 @@ function App() {
         <section className="hero shell">
           <div className="eyebrow"><Sparkles size={13}/> Open campus data, explained</div>
           <h1>The map behind <span>Gapwise.</span></h1>
-          <p className="lead">The canonical UTM campus data layer behind Gapwise: first-party downloads, provenance, schemas, validation, attribution, transparent uncertainty, and a visual contribution workflow.</p>
+          <p className="lead">The canonical University of Toronto campus data layer behind Gapwise: tri-campus building identity and geometry, provenance, schemas, validation, transparent uncertainty, and visual contribution workflows. Reviewed entrances, routing, and the published raw snapshot currently cover UTM.</p>
           <div className="hero-actions">
-            <a className="primary" href="/contribute"><MapPinned size={15}/> Map an entrance <ChevronRight size={16}/></a>
+            <a className="primary" href="/contribute"><MapPinned size={15}/> Contribute campus data <ChevronRight size={16}/></a>
             <a className="secondary" href="#datasets"><Database size={15}/> Explore the data</a>
             <a className="secondary" href="https://docs.gapwise.ca/data/"><BookOpen size={15}/> Read the data docs</a>
-            <a className="secondary" href={`${DATA_REPOSITORY}/tree/main/data/utm`}><Braces size={15}/> View source</a>
+            <a className="secondary" href={`${DATA_REPOSITORY}/tree/main/data`}><Braces size={15}/> View source</a>
           </div>
-          <div className="stats"><div><strong>GeoJSON</strong><span>Spatial data</span></div><div><strong>Auditable</strong><span>Provenance-first</span></div><div><strong>Contributable</strong><span>Visual entrance editor</span></div><div><strong>UTM</strong><span>Current coverage</span></div></div>
+          <div className="stats"><div><strong>GeoJSON</strong><span>Spatial data</span></div><div><strong>Auditable</strong><span>Provenance-first</span></div><div><strong>Contributable</strong><span>Visual campus tools</span></div><div><strong>Tri-campus</strong><span>Building maps</span></div></div>
         </section>
 
         <section className="shell intro-grid">

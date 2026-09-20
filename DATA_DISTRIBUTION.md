@@ -1,6 +1,6 @@
 # Public distribution contract
 
-`data/utm` is the canonical repository tree. A production build copies that validated tree to `https://data.gapwise.ca/datasets/utm/latest/` and generates `manifest.json` with SHA-256 hashes and byte sizes.
+`data/utm` is the canonical UTM distribution subtree. A production build copies that validated tree to `https://data.gapwise.ca/datasets/utm/latest/` and generates `manifest.json` with SHA-256 hashes and byte sizes. UTSG and UTSC source-backed identities and geometry remain canonical repository data but are not yet part of this production raw-data channel.
 
 This is a distribution surface, not a runtime dependency of Gapwise. The web app and public API ship with a tested snapshot so a Data-site outage does not break student routing.
 

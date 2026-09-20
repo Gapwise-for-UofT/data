@@ -1,1 +1,1 @@
-Gapwise Data public assets. Canonical raw campus artifacts are published during the production build under /datasets/utm/latest/.
+Gapwise Data public assets. The current raw UTM campus distribution is published during the production build under /datasets/utm/latest/; canonical UTSG and UTSC identity and geometry remain in their repository directories.

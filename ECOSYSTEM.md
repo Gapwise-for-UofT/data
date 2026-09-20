@@ -1,8 +1,8 @@
 # Gapwise ecosystem integration
 
-`data` is the **canonical public UTM campus-data, provenance, and reuse surface** of the seven-repository Gapwise product ecosystem. It owns public UTM campus facts and geometry; it does not redefine deterministic product calculations or public API behavior.
+`data` is the **canonical public University of Toronto campus-data, provenance, and reuse surface** of the seven-repository Gapwise product ecosystem. It owns campus-scoped facts and geometry; it does not redefine deterministic product calculations or public API behavior.
 
-Gapwise timetable identity supports UTM, UTSG, UTSC, and mixed-campus schedules. This repository remains UTM-focused until equivalent first-party campus evidence is deliberately added. Timetable coverage and campus-data coverage are separate claims.
+The repository contains source-backed building identity and map geometry for UTM, UTSG, and UTSC. Its reviewed entrance graph, pedestrian routing data, campus places, stable public API, and production raw-data distribution currently cover UTM. Those capabilities must remain separate claims.
 
 ## Connected surfaces
 
@@ -35,13 +35,13 @@ TypeScript and Python are equal first-party SDK implementations. Applications sh
 
 ## Data-specific source-of-truth rules
 
-1. Canonical public UTM campus records originate in `data/utm` in this repository.
+1. Canonical campus records originate in their campus-scoped directories in this repository; the reviewed UTM entrance/routing pipeline lives in `data/utm`.
 2. `gapwise/src/data/utm` is a checked-in compatibility mirror, validated byte-for-byte in CI; it is not a second authority.
 3. Public API and SDK behavior follows OpenAPI and the core implementation; this repository owns facts/evidence, not API semantics.
 4. Unknown/inferred/approximate/unverified states remain explicit in data and downstream representations.
 5. Upstream attribution and ODbL obligations remain attached to data even when consuming Gapwise code is MIT licensed.
 6. Production routing must not depend on `data.gapwise.ca` or GitHub being reachable at request time.
-7. Android and iOS must consume canonical campus/product contracts rather than silently growing independent UTM datasets.
+7. Android and iOS must consume canonical campus/product contracts rather than silently growing independent campus datasets.
 8. A schema/data-version change should trigger review of core API/SDK output, developer docs, native consumers, AI grounding, and relevant status probes.
 
 ## Change impact
@@ -56,4 +56,4 @@ When canonical campus data changes, check whether the change affects:
 - `ai` grounded public campus tools;
 - `status` monitored data/API endpoints.
 
-The ecosystem is intentionally interconnected, but ownership stays explicit: **Data owns public UTM facts; Core owns deterministic calculations/contracts; Docs explains releases; Android and iOS consume; AI exposes bounded context; Status communicates health.**
+The ecosystem is intentionally interconnected, but ownership stays explicit: **Data owns public campus facts; Core owns deterministic calculations/contracts; Docs explains releases; Android and iOS consume; AI exposes bounded context; Status communicates health.**
