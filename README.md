@@ -23,19 +23,19 @@
 
 ## What Gapwise Data is
 
-`data` is the **canonical repository for public UTM campus facts and geometry used by Gapwise**. The checked-in dataset under [`data/utm`](data/utm) contains building identity, map geometry, entrances, routing graph inputs, indoor/outdoor graph artifacts, provenance, confidence metadata, and generated audit data.
+`data` is the **canonical repository for public University of Toronto campus facts and geometry used by Gapwise**. It contains campus-scoped building registries and source-backed map geometry for UTM, UTSG, and UTSC. The mature [`data/utm`](data/utm) dataset additionally contains entrances, routing graph inputs, indoor/outdoor graph artifacts, provenance, confidence metadata, and generated audit data.
 
-Gapwise as a product supports timetable identity across **UTM, UTSG, UTSC, and mixed-campus schedules**. This repository is intentionally narrower: the current first-party campus map, route graph, place data, and open-data distribution are **UTM-focused**. That scope boundary is part of the data contract, not a limitation to hide.
+Gapwise supports timetable identity, campus-scoped building resolution, and web building maps across **UTM, UTSG, UTSC, and mixed-campus schedules**. UTSG and UTSC currently have source-backed identity inventories and building footprints with explicit unresolved coverage. Reviewed entrances, pedestrian routing, campus places, and the production raw-data distribution currently cover UTM.
 
 The main [`gapwise`](https://github.com/Gapwise-for-UofT/gapwise) repository remains authoritative for deterministic product behavior: timetable semantics, route calculation, gap planning, public API orchestration, SDK contracts, and map/product presentation. It vendors a checked-in snapshot of this repository's campus data so production routing never depends on `data.gapwise.ca` or GitHub being reachable at request time.
 
-> **`data` knows what UTM is. `gapwise` knows what to do with that knowledge.**
+> **`data` owns campus facts. `gapwise` owns product behavior.**
 
 ---
 
 ## What the data layer covers
 
-- canonical UTM building and facility identities;
+- campus-scoped UTM, UTSG, and UTSC building and facility identities;
 - campus geometry and building footprints;
 - mapped, inferred, and evidence-only entrances;
 - outdoor routing nodes and edges;
@@ -54,7 +54,7 @@ The current public Gapwise campus snapshot contains **30 canonical UTM buildings
 
 ## Data principles
 
-1. **One canonical source.** Public UTM campus facts and geometry are changed here first; downstream repositories consume snapshots or contracts.
+1. **One canonical source.** Public University of Toronto campus facts and geometry are changed here first; downstream repositories consume snapshots or contracts.
 2. **Explain transformations.** Published data should make clear where it came from and how it changed.
 3. **Separate fact from inference.** Derived navigation data must not masquerade as direct observation.
 4. **Prefer stable identifiers.** Codes and source IDs make downstream integrations more durable.
@@ -148,7 +148,7 @@ It verifies, among other things:
 | **[`docs`](https://github.com/Gapwise-for-UofT/docs)** | Canonical public developer documentation | [docs.gapwise.ca](https://docs.gapwise.ca) |
 | **[`status`](https://github.com/Gapwise-for-UofT/status)** | Independent service-health monitoring and incident communication | [status.gapwise.ca](https://status.gapwise.ca) |
 
-No consumer repository should recreate or silently fork UTM campus facts. Native clients and product surfaces may adapt presentation and platform integration, but source campus facts belong here and deterministic product calculations belong to `gapwise`.
+No consumer repository should recreate or silently fork campus facts. Native clients and product surfaces may adapt presentation and platform integration, but source campus facts belong here and deterministic product calculations belong to `gapwise`.
 
 ---
 
