@@ -23,6 +23,9 @@ const inputIssues = entranceInputIssues({ entrances, nodesDoc, edgesDoc, accessA
 if (inputIssues.length) throw new Error(`Cannot derive entrance data:\n- ${inputIssues.join("\n- ")}`);
 
 function auditFeature(feature) {
+  const ordinaryRoutingAllowed =
+    feature.properties.access !== "restricted" &&
+    feature.properties.access !== "emergency_only";
   return {
     type: "Feature",
     id: feature.id,
@@ -31,7 +34,7 @@ function auditFeature(feature) {
       buildingCode: feature.properties.buildingCode,
       label: feature.properties.label,
       kind: feature.properties.kind === "approach" ? "pedestrian_approach" : "exterior_entrance",
-      routability: "routable",
+      routability: ordinaryRoutingAllowed ? "routable" : "non_routable",
       publicAccess:
         feature.properties.access === "restricted" ||
         feature.properties.access === "emergency_only"
@@ -90,9 +93,14 @@ for (const edge of edgesDoc.edges) {
   }
 }
 
+const canonicalEntranceIds = new Set(entrances.features.map((feature) => feature.id));
 entranceAudit.features = [
   ...entrances.features.map(auditFeature),
-  ...entranceAudit.features.filter((f) => f.properties?.routability !== "routable"),
+  ...entranceAudit.features.filter(
+    (feature) =>
+      feature.properties?.routability !== "routable" &&
+      !canonicalEntranceIds.has(feature.id),
+  ),
 ];
 
 const incident = new Map(nodesDoc.features.map((f) => [f.id, 0]));
