@@ -58,6 +58,8 @@ const geocoded: EntranceRegistryRecord[] = features.map((feature) => {
   const routingNodeId =
     properties.routingNodeId ??
     (properties.osmNodeId === undefined ? undefined : `osm-node-${properties.osmNodeId}`);
+  const ordinaryRoutingAllowed =
+    properties.access !== "restricted" && properties.access !== "emergency_only";
   const direction = properties.direction ?? "unknown";
   return {
     id: feature.id,
@@ -66,7 +68,11 @@ const geocoded: EntranceRegistryRecord[] = features.map((feature) => {
     kind: inferred ? "pedestrian_approach" : "exterior_entrance",
     coordinates: feature.geometry.coordinates,
     ...(routingNodeId ? { routingNodeId } : {}),
-    routability: routingNodeId ? "routable" : "candidate",
+    routability: routingNodeId
+      ? ordinaryRoutingAllowed
+        ? "routable"
+        : "non_routable"
+      : "candidate",
     publicAccess:
       properties.access === "public"
         ? "verified"

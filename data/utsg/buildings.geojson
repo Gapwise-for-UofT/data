@@ -1026,6 +1026,141 @@
     },
     {
       "type": "Feature",
+      "id": "utsg:facility:006C",
+      "properties": {
+        "campus": "utsg",
+        "buildingId": "utsg:facility:006C",
+        "buildingCode": "006C",
+        "name": "Robarts Common",
+        "displayNameEvidence": null,
+        "timetableCodes": [],
+        "facilityCodes": [
+          "006C"
+        ],
+        "geometrySource": "openstreetmap",
+        "geometrySourceRef": "way/1540353363",
+        "reconciliationMethod": "explicit_source_backed_osm_ref",
+        "addressEvidence": null,
+        "refEvidence": {
+          "ref": "way/1540353363",
+          "sourceId": "openstreetmap",
+          "sourceUrl": "https://www.openstreetmap.org/way/1540353363",
+          "identityEvidenceUrl": "https://www.fs.utoronto.ca/services/elevators/campus-elevators/"
+        },
+        "pointEvidence": null,
+        "nameEvidence": null,
+        "verificationStatus": "inferred"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -79.3999498,
+              43.6645417
+            ],
+            [
+              -79.4001031,
+              43.6646003
+            ],
+            [
+              -79.4002922,
+              43.664596
+            ],
+            [
+              -79.4002931,
+              43.6645865
+            ],
+            [
+              -79.4003012,
+              43.6645057
+            ],
+            [
+              -79.4001057,
+              43.6640209
+            ],
+            [
+              -79.400039,
+              43.6640009
+            ],
+            [
+              -79.3999421,
+              43.6640018
+            ],
+            [
+              -79.3997752,
+              43.6640877
+            ],
+            [
+              -79.3998215,
+              43.6642219
+            ],
+            [
+              -79.3998406,
+              43.6642254
+            ],
+            [
+              -79.3998801,
+              43.6641941
+            ],
+            [
+              -79.3998877,
+              43.6641929
+            ],
+            [
+              -79.3999111,
+              43.6642441
+            ],
+            [
+              -79.3999036,
+              43.6642513
+            ],
+            [
+              -79.3998493,
+              43.6642426
+            ],
+            [
+              -79.3998322,
+              43.66425
+            ],
+            [
+              -79.3999392,
+              43.6645158
+            ],
+            [
+              -79.3999619,
+              43.6645152
+            ],
+            [
+              -79.3999968,
+              43.6644839
+            ],
+            [
+              -79.4000065,
+              43.6644847
+            ],
+            [
+              -79.4000286,
+              43.6645351
+            ],
+            [
+              -79.4000205,
+              43.6645398
+            ],
+            [
+              -79.3999656,
+              43.6645315
+            ],
+            [
+              -79.3999498,
+              43.6645417
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
       "id": "utsg:facility:008A",
       "properties": {
         "campus": "utsg",

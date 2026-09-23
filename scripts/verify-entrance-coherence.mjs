@@ -50,6 +50,9 @@ for (const id of adjacency.keys()) {
 }
 
 function expectedAudit(feature) {
+  const ordinaryRoutingAllowed =
+    feature.properties.access !== "restricted" &&
+    feature.properties.access !== "emergency_only";
   return {
     type: "Feature",
     id: feature.id,
@@ -58,7 +61,7 @@ function expectedAudit(feature) {
       buildingCode: feature.properties.buildingCode,
       label: feature.properties.label,
       kind: feature.properties.kind === "approach" ? "pedestrian_approach" : "exterior_entrance",
-      routability: "routable",
+      routability: ordinaryRoutingAllowed ? "routable" : "non_routable",
       publicAccess:
         feature.properties.access === "restricted" ||
         feature.properties.access === "emergency_only"
@@ -72,9 +75,7 @@ function expectedAudit(feature) {
 }
 
 const auditById = new Map(
-  entranceAudit.features
-    .filter((f) => f.properties?.routability === "routable")
-    .map((f) => [f.id, f]),
+  entranceAudit.features.map((feature) => [feature.id, feature]),
 );
 const byBuilding = new Map();
 
@@ -124,7 +125,12 @@ const auditIds = new Set();
 for (const feature of entranceAudit.features) {
   if (auditIds.has(feature.id)) issues.push(`${feature.id}: duplicate generated entrance-audit record`);
   auditIds.add(feature.id);
-  if (feature.properties.routability === "routable" && !entranceIds.has(feature.id)) {
+  if (
+    (feature.properties.routability === "routable" ||
+      feature.properties.routability === "non_routable") &&
+    !entranceIds.has(feature.id) &&
+    !String(feature.id).startsWith("utm:entrance-candidate:")
+  ) {
     issues.push(`${feature.id}: stale generated entrance-audit record has no canonical entrance`);
   }
 }

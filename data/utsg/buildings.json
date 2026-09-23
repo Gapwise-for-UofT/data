@@ -1,6 +1,6 @@
 {
   "campus": "utsg",
-  "generatedAt": "2026-09-18T21:18:19.298Z",
+  "generatedAt": "2026-09-21T01:13:41.662Z",
   "sourceIds": [
     "uoft-facilities-bas-2025",
     "uoft-ttb-live",
@@ -195,9 +195,9 @@
       ],
       "geometryRefs": [
         {
-          "ref": "way/627629970",
+          "ref": "way/1540353363",
           "sourceId": "openstreetmap",
-          "sourceUrl": "https://www.openstreetmap.org/way/627629970",
+          "sourceUrl": "https://www.openstreetmap.org/way/1540353363",
           "identityEvidenceUrl": "https://www.fs.utoronto.ca/services/elevators/campus-elevators/"
         }
       ],

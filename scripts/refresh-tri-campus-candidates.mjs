@@ -1325,6 +1325,9 @@ async function refreshCampus(campus, sessions, divisions, { reuseTtb = false } =
           sourceRef: previousFeature.properties?.geometrySourceRef ?? "",
           method: previousFeature.properties?.reconciliationMethod ?? "preserved_checked_in_geometry",
           addressEvidence: previousFeature.properties?.addressEvidence ?? null,
+          refEvidence: previousFeature.properties?.refEvidence ?? null,
+          pointEvidence: previousFeature.properties?.pointEvidence ?? null,
+          nameEvidence: previousFeature.properties?.nameEvidence ?? null,
         }
       : match
         ? geometryForMatchedOsm(match, cityFeatures)
