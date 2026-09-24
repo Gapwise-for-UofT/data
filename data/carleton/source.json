@@ -1,0 +1,49 @@
+{
+  "campus": "carleton",
+  "name": "Carleton University",
+  "bounds": {
+    "minLon": -75.7075,
+    "maxLon": -75.688,
+    "minLat": 45.373,
+    "maxLat": 45.392
+  },
+  "identitySources": [
+    {
+      "id": "carleton-campus-map-2025",
+      "name": "Carleton University official campus map (April 2025)",
+      "url": "https://carleton.ca/about/wp-content/uploads/sites/120/2025/07/Carleton_Campus_Map_April2025.pdf",
+      "lastVerified": "2026-09-24",
+      "status": "verified"
+    },
+    {
+      "id": "carleton-buildings-directory",
+      "name": "Carleton University current buildings directory",
+      "url": "https://carleton.ca/campus/buildings/",
+      "lastVerified": "2026-09-24",
+      "status": "verified"
+    },
+    {
+      "id": "carleton-housing-buildings",
+      "name": "Carleton Housing and Residence Life building information",
+      "url": "https://housing.carleton.ca/our-buildings/",
+      "lastVerified": "2026-09-24",
+      "status": "verified"
+    }
+  ],
+  "geometrySources": [
+    {
+      "id": "openstreetmap",
+      "name": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/",
+      "licence": "ODbL 1.0",
+      "attribution": "© OpenStreetMap contributors"
+    },
+    {
+      "id": "ottawa-building-footprints",
+      "name": "City of Ottawa Open Data — Building Footprints",
+      "url": "https://maps.ottawa.ca/arcgis/rest/services/TopographicMapping/MapServer/3",
+      "licence": "Open Government Licence — City of Ottawa",
+      "attribution": "Contains information licensed under the Open Government Licence – City of Ottawa."
+    }
+  ]
+}
