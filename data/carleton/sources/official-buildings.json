@@ -1,0 +1,503 @@
+{
+  "sourceId": "carleton-campus-map-2025",
+  "sourceUrl": "https://carleton.ca/about/wp-content/uploads/sites/120/2025/07/Carleton_Campus_Map_April2025.pdf",
+  "lastVerified": "2026-09-24",
+  "records": [
+    {
+      "code": "AA",
+      "name": "Architecture Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "AA"
+    },
+    {
+      "code": "AB",
+      "name": "ARISE Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Advanced Research and Innovation in Smart Environments Building"
+      ],
+      "timetableCode": "AB"
+    },
+    {
+      "code": "AC",
+      "name": "Athletics",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Athletics (Physical Recreation Centre)",
+        "Athletics Building"
+      ],
+      "timetableCode": "AC"
+    },
+    {
+      "code": "AH",
+      "name": "Alumni Hall",
+      "category": "facility",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "AH"
+    },
+    {
+      "code": "AP",
+      "name": "Azrieli Pavilion",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "AP"
+    },
+    {
+      "code": "AT",
+      "name": "Azrieli Theatre",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "AT"
+    },
+    {
+      "code": "CB",
+      "name": "Canal Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "CB"
+    },
+    {
+      "code": "CC",
+      "name": "Andrew Fleck Childcare Centre",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Colonel By Child Care Centre",
+        "Colonel By Childcare Centre"
+      ],
+      "timetableCode": "CC"
+    },
+    {
+      "code": "DH",
+      "name": "Dundas House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "DH"
+    },
+    {
+      "code": "DT",
+      "name": "Dunton Tower",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "DT"
+    },
+    {
+      "code": "FH",
+      "name": "Fieldhouse",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Field House"
+      ],
+      "timetableCode": "FH"
+    },
+    {
+      "code": "FR",
+      "name": "Frontenac House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "FR"
+    },
+    {
+      "code": "GH",
+      "name": "Glengarry House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "GH"
+    },
+    {
+      "code": "GR",
+      "name": "Grenville House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [
+        "Grenville/Russell House",
+        "Grenville - Russell House"
+      ],
+      "timetableCode": "GR"
+    },
+    {
+      "code": "GY",
+      "name": "Gymnasium",
+      "category": "facility",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "GY"
+    },
+    {
+      "code": "HC",
+      "name": "Human Computer Interaction Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "HCI",
+        "Human Computer Interaction (HCI)"
+      ],
+      "timetableCode": "HC"
+    },
+    {
+      "code": "HP",
+      "name": "Herzberg Laboratories",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Herzberg Laboratory"
+      ],
+      "timetableCode": "HP"
+    },
+    {
+      "code": "HS",
+      "name": "Health Sciences Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "HS"
+    },
+    {
+      "code": "IH",
+      "name": "Advanced Capital Ice House",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Ice House",
+        "Carleton Ice House"
+      ],
+      "timetableCode": "IH"
+    },
+    {
+      "code": "KS",
+      "name": "TAAG Park",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Keith Harris Stadium",
+        "TAAG Park (formerly Keith Harris Stadium)"
+      ],
+      "timetableCode": "KS"
+    },
+    {
+      "code": "LA",
+      "name": "Loeb Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "LA"
+    },
+    {
+      "code": "LE",
+      "name": "Leeds House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "LE"
+    },
+    {
+      "code": "LH",
+      "name": "Lanark House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "LH"
+    },
+    {
+      "code": "LX",
+      "name": "Lennox and Addington House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [
+        "Lennox & Addington House",
+        "Lennox-Addington House"
+      ],
+      "timetableCode": "LX"
+    },
+    {
+      "code": "MB",
+      "name": "Maintenance Building",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Maintenance and Operations Building"
+      ],
+      "timetableCode": "MB"
+    },
+    {
+      "code": "MC",
+      "name": "Minto Centre for Advanced Studies in Engineering",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Minto CASE",
+        "Minto Centre",
+        "Minto Centre for Advanced Studies in Engineering (CASE)"
+      ],
+      "timetableCode": "MC"
+    },
+    {
+      "code": "ME",
+      "name": "Mackenzie Engineering Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Mackenzie Building",
+        "C.J. Mackenzie Building"
+      ],
+      "timetableCode": "ME"
+    },
+    {
+      "code": "ML",
+      "name": "MacOdrum Library",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Macodrum Library"
+      ],
+      "timetableCode": "ML"
+    },
+    {
+      "code": "NB",
+      "name": "H.H.J. Nesbitt Biology Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Nesbitt Biology Building",
+        "Nesbitt Biology"
+      ],
+      "timetableCode": "NB"
+    },
+    {
+      "code": "NI",
+      "name": "Nicol Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Nicol Building (Sprott School of Business)",
+        "Sprott School of Business"
+      ],
+      "timetableCode": "NI"
+    },
+    {
+      "code": "NN",
+      "name": "Nideyinàn",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Nideyinan",
+        "University Centre",
+        "University Center"
+      ],
+      "timetableCode": "NN"
+    },
+    {
+      "code": "NW",
+      "name": "National Wildlife Research Centre",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "National Wildlife Research Center"
+      ],
+      "timetableCode": "NW"
+    },
+    {
+      "code": "PA",
+      "name": "Paterson Hall",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Patterson Hall"
+      ],
+      "timetableCode": "PA"
+    },
+    {
+      "code": "PG",
+      "name": "Parking Garages",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Parking Garage"
+      ],
+      "timetableCode": "PG"
+    },
+    {
+      "code": "PH",
+      "name": "Prescott House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "PH"
+    },
+    {
+      "code": "PK",
+      "name": "Pigiarvik",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Pigiarvik (formerly Robertson Hall)",
+        "Robertson Hall"
+      ],
+      "timetableCode": "PK"
+    },
+    {
+      "code": "RB",
+      "name": "Richcraft Hall",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "River Building"
+      ],
+      "timetableCode": "RB"
+    },
+    {
+      "code": "RH",
+      "name": "Renfrew House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "RH"
+    },
+    {
+      "code": "RI",
+      "name": "Rideau House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "RI"
+    },
+    {
+      "code": "RU",
+      "name": "Russell House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [
+        "Grenville/Russell House",
+        "Russell-Grenville House"
+      ],
+      "timetableCode": "RU"
+    },
+    {
+      "code": "SA",
+      "name": "Southam Hall",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Southam Hall (Kailash Mital Theatre)",
+        "Kailash Mital Theatre"
+      ],
+      "timetableCode": "SA"
+    },
+    {
+      "code": "SC",
+      "name": "Steacie Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "SC"
+    },
+    {
+      "code": "SH",
+      "name": "Stormont House",
+      "category": "residence",
+      "status": "active",
+      "aliases": [
+        "Stormont/Dundas House",
+        "Stormont - Dundas House"
+      ],
+      "timetableCode": "SH"
+    },
+    {
+      "code": "SP",
+      "name": "St. Patrick's Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "St Patrick's Building",
+        "St. Patrick’s Building",
+        "Carleton University Art Gallery"
+      ],
+      "timetableCode": "SP"
+    },
+    {
+      "code": "SR",
+      "name": "Social Sciences Research Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Social Science Research Building"
+      ],
+      "timetableCode": "SR"
+    },
+    {
+      "code": "TB",
+      "name": "Tory Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [],
+      "timetableCode": "TB"
+    },
+    {
+      "code": "TC",
+      "name": "Teraanga Commons",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Teraanaga Commons",
+        "Residence Commons",
+        "University Commons"
+      ],
+      "timetableCode": "TC"
+    },
+    {
+      "code": "TD",
+      "name": "Tennis Centre",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Tennis Center"
+      ],
+      "timetableCode": "TD"
+    },
+    {
+      "code": "TT",
+      "name": "Carleton Technology and Training Centre",
+      "category": "facility",
+      "status": "active",
+      "aliases": [
+        "Carleton Technology & Training Centre",
+        "CTTC"
+      ],
+      "timetableCode": "TT"
+    },
+    {
+      "code": "UH",
+      "name": "Urbandale Centre",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Urbandale Centre for Home Energy Research"
+      ],
+      "timetableCode": "UH"
+    },
+    {
+      "code": "VS",
+      "name": "Visualization and Simulation Building",
+      "category": "academic",
+      "status": "active",
+      "aliases": [
+        "Visualization & Simulation Building",
+        "VSIM"
+      ],
+      "timetableCode": "VS"
+    }
+  ]
+}
