@@ -170,7 +170,7 @@ npm install @gapwise/sdk@0.1.1
 python -m pip install gapwise==0.1.0
 ```
 
-Gapwise source code is MIT licensed, but upstream datasets retain their own terms. OpenStreetMap-derived records require appropriate OpenStreetMap attribution and ODbL compliance; the MIT license does not override upstream data obligations.
+Original repository code and documentation are [MIT licensed](LICENSE), but upstream datasets retain their own terms. OpenStreetMap-derived records require appropriate OpenStreetMap attribution and ODbL compliance; the MIT license does not override upstream data obligations. Review [`DATA_DISTRIBUTION.md`](DATA_DISTRIBUTION.md) and source metadata before reusing a dataset.
 
 ---
 
