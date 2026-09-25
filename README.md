@@ -6,7 +6,7 @@
 
 ### The canonical open-data and provenance layer behind Gapwise.
 
-**A transparent, developer-friendly home for the University of Toronto campus data that powers Gapwise: buildings, geometry, routing evidence, provenance, validation, attribution, and reuse.**
+**A transparent home for the university campus data that powers Gapwise: buildings, geometry, routing evidence, provenance, validation, attribution, and reuse.**
 
 [![Data](https://img.shields.io/badge/Data-data.gapwise.ca-B42335?style=for-the-badge&logo=databricks&logoColor=white)](https://data.gapwise.ca)
 [![Docs](https://img.shields.io/badge/Docs-data_guides-111111?style=for-the-badge)](https://docs.gapwise.ca/data/)
@@ -23,7 +23,9 @@
 
 ## What Gapwise Data is
 
-`data` is the **canonical repository for public University of Toronto campus facts and geometry used by Gapwise**. It contains campus-scoped building registries and source-backed map geometry for UTM, UTSG, and UTSC. The mature [`data/utm`](data/utm) dataset additionally contains entrances, routing graph inputs, indoor/outdoor graph artifacts, provenance, confidence metadata, and generated audit data.
+`data` is the **canonical repository for campus facts and geometry used by Gapwise**. It contains campus-scoped building registries and source-backed map geometry for UTM, UTSG, UTSC, and Carleton. The mature [`data/utm`](data/utm) dataset additionally contains entrances, routing graph inputs, indoor/outdoor graph artifacts, provenance, confidence metadata, and generated audit data.
+
+The validated [`universities/carleton/campus.json`](universities/carleton/campus.json) and [`academic.json`](universities/carleton/academic.json) snapshots were migrated byte for byte from `carleton-data`. Their [source register](docs/universities/carleton-sources.md), [schemas](schemas/universities), and validation tests moved with them. Carleton's graph has mapped outdoor pedestrian ways, but most entrance access is unknown and no pair of buildings has verified public entrance connections at both ends. The application presents route uncertainty accordingly.
 
 Gapwise supports timetable identity, campus-scoped building resolution, and web building maps across **UTM, UTSG, UTSC, and mixed-campus schedules**. UTSG and UTSC currently have source-backed identity inventories and building footprints with explicit unresolved coverage. Reviewed entrances, pedestrian routing, campus places, and the production raw-data distribution currently cover UTM.
 
@@ -54,7 +56,7 @@ The current public Gapwise campus snapshot contains **30 canonical UTM buildings
 
 ## Data principles
 
-1. **One canonical source.** Public University of Toronto campus facts and geometry are changed here first; downstream repositories consume snapshots or contracts.
+1. **One canonical source.** Public campus facts and geometry are changed here first; downstream repositories consume snapshots or contracts.
 2. **Explain transformations.** Published data should make clear where it came from and how it changed.
 3. **Separate fact from inference.** Derived navigation data must not masquerade as direct observation.
 4. **Prefer stable identifiers.** Codes and source IDs make downstream integrations more durable.
@@ -105,6 +107,14 @@ bun run campus-data:publish
 Data-writing routing/survey maintenance commands still synchronize from this repository before running and publish resulting canonical artifacts back afterward. That generator layer remains a transitional dependency while validation/routing types are decoupled from core.
 
 Normal production requests do not perform cross-repository or `data.gapwise.ca` fetches.
+
+## University data contract
+
+New universities use `universities/<id>/campus.json` with one institution and campus identity, source records, buildings with native codes and aliases, GeoJSON footprints, entrances with explicit access status, pedestrian graph nodes and edges, and record-level provenance. Optional `academic.json` stores permitted terms, courses, sections, and meeting records. The schemas in [`schemas/universities`](schemas/universities) and `npm run data:validate` enforce record shape, identity, source permission, references, geometry, and graph coherence.
+
+`gapwise data osm <id> --bbox=west,south,east,north` writes an unreviewed OSM candidate file. It does not silently promote buildings, door associations, or path links. Review and validate before moving any candidate into the canonical snapshot.
+
+The repository's MIT license applies to original code and documentation. It does **not** relicense OSM or university source material. The Carleton dataset retains OSM contributor attribution, ODbL source terms, and native element provenance. Keep source-specific rights and attribution with any redistribution.
 
 ---
 
