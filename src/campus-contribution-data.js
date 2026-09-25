@@ -10,6 +10,10 @@ import utsgRegistry from '../data/utsg/buildings.json';
 import utsgFootprintsJson from '../data/utsg/buildings.geojson?raw';
 import utscRegistry from '../data/utsc/buildings.json';
 import utscFootprintsJson from '../data/utsc/buildings.geojson?raw';
+import carletonCampus from '../universities/carleton/campus.json';
+import tmuCampus from '../universities/tmu/campus.json';
+import queensCampus from '../universities/queens/campus.json';
+import laurierCampus from '../universities/laurier/campus.json';
 
 const utsgFootprints = JSON.parse(utsgFootprintsJson);
 const utscFootprints = JSON.parse(utscFootprintsJson);
@@ -58,6 +62,34 @@ const UTSC_FALLBACK = {
   maxLat: 43.7995,
 };
 
+const CARLETON_FALLBACK = {
+  minLon: -75.705,
+  maxLon: -75.688,
+  minLat: 45.38,
+  maxLat: 45.394,
+};
+
+const TMU_FALLBACK = {
+  minLon: -79.385,
+  maxLon: -79.373,
+  minLat: 43.654,
+  maxLat: 43.662,
+};
+
+const QUEENS_FALLBACK = {
+  minLon: -76.502,
+  maxLon: -76.49,
+  minLat: 44.221,
+  maxLat: 44.232,
+};
+
+const LAURIER_FALLBACK = {
+  minLon: -80.536,
+  maxLon: -80.523,
+  minLat: 43.47,
+  maxLat: 43.479,
+};
+
 const TRI_CAMPUS_REGISTRIES = {
   utsg: utsgRegistry,
   utsc: utscRegistry,
@@ -67,6 +99,77 @@ const TRI_CAMPUS_FOOTPRINTS = {
   utsg: Array.isArray(utsgFootprints?.features) ? utsgFootprints.features : [],
   utsc: Array.isArray(utscFootprints?.features) ? utscFootprints.features : [],
 };
+
+function universityFootprints(dataset) {
+  return (dataset?.buildings || [])
+    .filter((b) => b.geometry)
+    .map((b) => ({
+      type: 'Feature',
+      id: b.id,
+      properties: {
+        buildingId: b.id,
+        code: b.nativeCodes?.[0] || b.id,
+        name: b.name,
+      },
+      geometry: b.geometry,
+    }));
+}
+
+function universityBuildings(dataset, campusId) {
+  return (dataset?.buildings || []).map((building) => {
+    const feature = building.geometry
+      ? {
+          type: 'Feature',
+          id: building.id,
+          properties: {
+            buildingId: building.id,
+            code: building.nativeCodes?.[0] || building.id,
+            name: building.name,
+          },
+          geometry: building.geometry,
+        }
+      : null;
+    const features = feature ? [feature] : [];
+    const code = building.nativeCodes?.[0] || building.id.toUpperCase();
+    const entrances = (dataset.entrances || []).filter((e) => e.buildingId === building.id);
+    return {
+      code,
+      name: building.name,
+      aliases: building.aliases ?? [],
+      timetableCodes: building.nativeCodes ?? [],
+      campus: campusId,
+      source: 'canonical',
+      canonicalId: building.id,
+      features,
+      entranceCount: entrances.length,
+      geometryStatus: feature ? 'mapped' : 'unresolved',
+    };
+  });
+}
+
+function universityEntrances(dataset) {
+  const buildingById = new Map((dataset?.buildings || []).map((b) => [b.id, b]));
+  return (dataset?.entrances || []).map((entrance) => {
+    const building = buildingById.get(entrance.buildingId);
+    return {
+      type: 'Feature',
+      id: entrance.id,
+      properties: {
+        id: entrance.id,
+        buildingId: entrance.buildingId,
+        buildingCode: building?.nativeCodes?.[0] || entrance.buildingId,
+        buildingName: building?.name || entrance.buildingId,
+        access: entrance.access,
+      },
+      geometry: { type: 'Point', coordinates: entrance.coordinate },
+    };
+  });
+}
+
+const CARLETON_FOOTPRINTS = universityFootprints(carletonCampus);
+const TMU_FOOTPRINTS = universityFootprints(tmuCampus);
+const QUEENS_FOOTPRINTS = universityFootprints(queensCampus);
+const LAURIER_FOOTPRINTS = universityFootprints(laurierCampus);
 
 function importedBuildingsForCampus(campusId) {
   const registry = TRI_CAMPUS_REGISTRIES[campusId];
@@ -96,9 +199,60 @@ function importedBuildingsForCampus(campusId) {
   }));
 }
 
+export const UNIVERSITIES = [
+  {
+    id: 'uoft',
+    name: 'University of Toronto',
+    shortName: 'U of T',
+    defaultCampus: 'utm',
+    campuses: [
+      { id: 'utm', name: 'Mississauga', shortName: 'UTM' },
+      { id: 'utsg', name: 'St. George', shortName: 'UTSG' },
+      { id: 'utsc', name: 'Scarborough', shortName: 'UTSC' },
+    ],
+  },
+  {
+    id: 'carleton',
+    name: 'Carleton University',
+    shortName: 'Carleton',
+    defaultCampus: 'carleton',
+    campuses: [
+      { id: 'carleton', name: 'Carleton University', shortName: 'Carleton' },
+    ],
+  },
+  {
+    id: 'tmu',
+    name: 'Toronto Metropolitan University',
+    shortName: 'TMU',
+    defaultCampus: 'tmu',
+    campuses: [
+      { id: 'tmu', name: 'Toronto Metropolitan University', shortName: 'TMU' },
+    ],
+  },
+  {
+    id: 'queens',
+    name: "Queen's University",
+    shortName: "Queen's",
+    defaultCampus: 'queens',
+    campuses: [
+      { id: 'queens', name: "Queen's University", shortName: "Queen's" },
+    ],
+  },
+  {
+    id: 'laurier',
+    name: 'Wilfrid Laurier University',
+    shortName: 'Laurier',
+    defaultCampus: 'laurier',
+    campuses: [
+      { id: 'laurier', name: 'Waterloo Campus', shortName: 'Laurier' },
+    ],
+  },
+];
+
 export const CAMPUSES = {
   utm: {
     id: 'utm',
+    universityId: 'uoft',
     shortName: 'UTM',
     name: 'University of Toronto Mississauga',
     bounds: boundsFromFeatures(utmFootprintFeatures, UTM_FALLBACK),
@@ -106,6 +260,7 @@ export const CAMPUSES = {
   },
   utsg: {
     id: 'utsg',
+    universityId: 'uoft',
     shortName: 'UTSG',
     name: 'University of Toronto St. George',
     bounds: boundsFromFeatures(TRI_CAMPUS_FOOTPRINTS.utsg, UTSG_FALLBACK),
@@ -113,18 +268,64 @@ export const CAMPUSES = {
   },
   utsc: {
     id: 'utsc',
+    universityId: 'uoft',
     shortName: 'UTSC',
     name: 'University of Toronto Scarborough',
     bounds: boundsFromFeatures(TRI_CAMPUS_FOOTPRINTS.utsc, UTSC_FALLBACK),
     tileZoom: 16,
+  },
+  carleton: {
+    id: 'carleton',
+    universityId: 'carleton',
+    shortName: 'Carleton',
+    name: 'Carleton University',
+    bounds: boundsFromFeatures(CARLETON_FOOTPRINTS, CARLETON_FALLBACK),
+    tileZoom: 16,
+  },
+  tmu: {
+    id: 'tmu',
+    universityId: 'tmu',
+    shortName: 'TMU',
+    name: 'Toronto Metropolitan University',
+    bounds: boundsFromFeatures(TMU_FOOTPRINTS, TMU_FALLBACK),
+    tileZoom: 17,
+  },
+  queens: {
+    id: 'queens',
+    universityId: 'queens',
+    shortName: "Queen's",
+    name: "Queen's University",
+    bounds: boundsFromFeatures(QUEENS_FOOTPRINTS, QUEENS_FALLBACK),
+    tileZoom: 16,
+  },
+  laurier: {
+    id: 'laurier',
+    universityId: 'laurier',
+    shortName: 'Laurier',
+    name: 'Wilfrid Laurier University',
+    bounds: boundsFromFeatures(LAURIER_FOOTPRINTS, LAURIER_FALLBACK),
+    tileZoom: 17,
   },
 };
 
 export const CAMPUS_IDS = Object.keys(CAMPUSES);
 
 export function campusFromQuery() {
-  const requested = new URLSearchParams(window.location.search).get('campus')?.toLowerCase();
-  return CAMPUSES[requested] ? requested : 'utm';
+  const params = new URLSearchParams(window.location.search);
+  const requestedCampus = params.get('campus')?.toLowerCase();
+  if (requestedCampus && CAMPUSES[requestedCampus]) {
+    return requestedCampus;
+  }
+  const requestedUni = params.get('university')?.toLowerCase();
+  if (requestedUni) {
+    const uni = UNIVERSITIES.find((u) => u.id === requestedUni);
+    if (uni) return uni.defaultCampus;
+  }
+  return 'utm';
+}
+
+export function universityForCampus(campusId) {
+  return CAMPUSES[campusId]?.universityId || 'uoft';
 }
 
 export function canonicalBuildingsForCampus(campusId) {
@@ -134,16 +335,30 @@ export function canonicalBuildingsForCampus(campusId) {
   if (campusId === 'utsg' || campusId === 'utsc') {
     return importedBuildingsForCampus(campusId);
   }
+  if (campusId === 'carleton') return universityBuildings(carletonCampus, 'carleton');
+  if (campusId === 'tmu') return universityBuildings(tmuCampus, 'tmu');
+  if (campusId === 'queens') return universityBuildings(queensCampus, 'queens');
+  if (campusId === 'laurier') return universityBuildings(laurierCampus, 'laurier');
   return [];
 }
 
 export function canonicalFootprintsForCampus(campusId) {
   if (campusId === 'utm') return utmFootprintFeatures;
-  return TRI_CAMPUS_FOOTPRINTS[campusId] ?? [];
+  if (campusId === 'utsg' || campusId === 'utsc') return TRI_CAMPUS_FOOTPRINTS[campusId] ?? [];
+  if (campusId === 'carleton') return CARLETON_FOOTPRINTS;
+  if (campusId === 'tmu') return TMU_FOOTPRINTS;
+  if (campusId === 'queens') return QUEENS_FOOTPRINTS;
+  if (campusId === 'laurier') return LAURIER_FOOTPRINTS;
+  return [];
 }
 
 export function canonicalEntrancesForCampus(campusId) {
-  return campusId === 'utm' ? utmEntranceFeatures : [];
+  if (campusId === 'utm') return utmEntranceFeatures;
+  if (campusId === 'carleton') return universityEntrances(carletonCampus);
+  if (campusId === 'tmu') return universityEntrances(tmuCampus);
+  if (campusId === 'queens') return universityEntrances(queensCampus);
+  if (campusId === 'laurier') return universityEntrances(laurierCampus);
+  return [];
 }
 
 export function createCampusProjection(campusId) {
