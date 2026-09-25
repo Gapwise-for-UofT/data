@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "institution": "tmu",
+  "sources": [
+    {
+      "id": "tmu-official-map-2025",
+      "title": "Toronto Metropolitan University Campus Map",
+      "url": "https://www.torontomu.ca/maps/",
+      "retrievedAt": "2026-09-24",
+      "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+      "redistribution": "permitted",
+      "transformation": "Cross-checked individual factual building names, codes, and locations",
+      "attribution": "Toronto Metropolitan University"
+    }
+  ],
+  "terms": [],
+  "courses": []
+}
