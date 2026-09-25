@@ -5,10 +5,10 @@ import './styles.css';
 import './accent-theme.css';
 
 const datasets = [
+  { name: 'Multi-university campus models', file: 'universities/*/campus.json', type: 'JSON', status: 'Maintained', description: 'Comprehensive campus schemas with verified buildings, entrances, path graphs, and provenance across all 5 universities.', fields: ['institution', 'campus', 'buildings', 'entrances', 'pathNodes', 'pathEdges'] },
   { name: 'Building registry', file: 'building-registry.ts', type: 'Registry', status: 'Maintained', description: 'Canonical building codes, names, aliases, categories and room-to-floor interpretation rules.', fields: ['code', 'name', 'category', 'aliases', 'roomFloorRule'] },
-  { name: 'Campus buildings', file: 'buildings.geojson', type: 'GeoJSON', status: 'Derived + reviewed', description: 'Navigation points and canonical building metadata for the UTM campus.', fields: ['geometry', 'code', 'name', 'geometryRole', 'source'] },
-  { name: 'Building footprints', file: 'footprints/*.geojson', type: 'GeoJSON', status: 'Source-linked', description: 'Per-building polygon geometry with source IDs and provenance notes.', fields: ['buildingCode', 'name', 'category', 'sourceIds', 'geometry'] },
-  { name: 'Entrances & access', file: 'generated/campus-access-audit.json', type: 'JSON', status: 'Audited', description: 'Coverage and verification information for exterior entrances and approach geometry.', fields: ['code', 'canonicalGeometry', 'verifiedExteriorEntrances', 'inferredApproaches'] },
+  { name: 'Campus buildings & footprints', file: 'buildings.geojson', type: 'GeoJSON', status: 'Derived + reviewed', description: 'Navigation points, polygon footprints, and canonical metadata spanning U of T, Carleton, TMU, Queen\'s, and Laurier.', fields: ['geometry', 'code', 'name', 'geometryRole', 'source'] },
+  { name: 'Entrances & access audits', file: 'generated/campus-access-audit.json', type: 'JSON', status: 'Audited', description: 'Coverage, barrier-free access, and verification information for exterior entrances and approach networks.', fields: ['code', 'canonicalGeometry', 'verifiedExteriorEntrances', 'inferredApproaches'] },
 ];
 
 const schemas = [
@@ -63,16 +63,21 @@ function App() {
 
       <main id="top">
         <section className="hero shell">
-          <div className="eyebrow"><Sparkles size={13}/> Open campus data, explained</div>
+          <div className="eyebrow"><Sparkles size={13}/> Canada's largest free and open multi-university campus navigation dataset</div>
           <h1>The map behind <span>Gapwise.</span></h1>
-          <p className="lead">The canonical University of Toronto campus data layer behind Gapwise: tri-campus building identity and geometry, provenance, schemas, validation, transparent uncertainty, and visual contribution workflows. Reviewed entrances, routing, and the published raw snapshot currently cover UTM.</p>
+          <p className="lead">Canada's largest free and open multi-university campus navigation dataset: auditable building identity, footprints, verified exterior entrances, accessible routes, provenance, schemas, and visual contribution tools spanning the University of Toronto (UTM, UTSG, UTSC), Carleton University, Toronto Metropolitan University (TMU), Queen's University, and Wilfrid Laurier University.</p>
           <div className="hero-actions">
             <a className="primary" href="/contribute"><MapPinned size={15}/> Contribute campus data <ChevronRight size={16}/></a>
             <a className="secondary" href="#datasets"><Database size={15}/> Explore the data</a>
             <a className="secondary" href="https://docs.gapwise.ca/data/"><BookOpen size={15}/> Read the data docs</a>
-            <a className="secondary" href={`${DATA_REPOSITORY}/tree/main/data`}><Braces size={15}/> View source</a>
+            <a className="secondary" href={`${DATA_REPOSITORY}/tree/main/universities`}><Braces size={15}/> View source</a>
           </div>
-          <div className="stats"><div><strong>GeoJSON</strong><span>Spatial data</span></div><div><strong>Auditable</strong><span>Provenance-first</span></div><div><strong>Contributable</strong><span>Visual campus tools</span></div><div><strong>Tri-campus</strong><span>Building maps</span></div></div>
+          <div className="stats">
+            <div><strong>5</strong><span>Universities</span></div>
+            <div><strong>7</strong><span>Campus models</span></div>
+            <div><strong>Auditable</strong><span>Provenance-first</span></div>
+            <div><strong>Open source</strong><span>Visual studio</span></div>
+          </div>
         </section>
 
         <section className="shell intro-grid">
@@ -90,12 +95,12 @@ function App() {
 
         <section id="schemas" className="section shell"><div className="schema-grid"><div><div className="kicker"><BookOpen size={14}/> Schema explorer</div><h2>Readable by people and machines.</h2><p className="section-copy">Stable fields make downstream projects less brittle. Schema documentation distinguishes required values, optional enrichments, and source metadata.</p><div className="legend"><span><i className="dot required"/>required</span><span><i className="dot optional"/>optional</span><span><i className="dot source"/>source</span></div><p className="section-copy"><a href="/schemas/dataset-manifest.schema.json">Machine-readable distribution manifest schema →</a></p><p className="section-copy"><a href="/schemas/entrance-contribution.schema.json">Entrance contribution schema →</a></p></div><div className="schema-card"><div className="schema-title"><Braces size={16}/><code>BuildingRecord</code></div>{schemas.map(([field,type,kind]) => <div className="schema-row" key={field}><b>{field}</b><code>{type}</code><em>{kind}</em></div>)}</div></div></section>
 
-        <section id="reuse" className="section shell"><div className="kicker"><Map size={14}/> Use the data</div><h2>Use a first-party Gapwise URL.</h2><p className="section-copy">Raw source-level artifacts are distributed from <code>data.gapwise.ca</code>. Applications that need stable campus-intelligence behavior should prefer the Gapwise public API or SDKs. Production Gapwise itself uses a tested pinned snapshot and does not depend on this website being online.</p><div className="codebox"><div className="codebar"><div>{['js','python','curl'].map(tab => <button key={tab} className={codeTab===tab?'active':''} onClick={() => setCodeTab(tab)}>{tab === 'js' ? 'JavaScript' : tab === 'python' ? 'Python' : 'curl'}</button>)}</div><button className="copy" onClick={copySnippet}>{copied ? <Check size={14}/> : <Clipboard size={14}/>} {copied ? 'Copied' : 'Copy'}</button></div><pre><code>{snippets[codeTab]}</code></pre></div><div className="hero-actions"><a className="secondary" href="/datasets/utm/latest/manifest.json"><FileJson size={15}/> Dataset manifest</a><a className="secondary" href="https://api.gapwise.ca/v1"><Braces size={15}/> Stable API</a><a className="secondary" href="https://docs.gapwise.ca/data/"><BookOpen size={15}/> Reuse guide</a><a className="secondary" href="/contribute"><MapPinned size={15}/> Contribute an entrance</a></div></section>
+        <section id="reuse" className="section shell"><div className="kicker"><Map size={14}/> Use the data</div><h2>Use a first-party Gapwise URL.</h2><p className="section-copy">Raw source-level artifacts are distributed from <code>data.gapwise.ca</code>. Applications that need stable campus-intelligence behavior should prefer the Gapwise public API or SDKs. Production Gapwise itself uses a tested pinned snapshot and does not depend on this website being online.</p><div className="codebox"><div className="codebar"><div>{['js','python','curl'].map((tab) => <button key={tab} className={codeTab===tab?'active':''} onClick={() => setCodeTab(tab)}>{tab === 'js' ? 'JavaScript' : tab === 'python' ? 'Python' : 'curl'}</button>)}</div><button className="copy" onClick={copySnippet}>{copied ? <Check size={14}/> : <Clipboard size={14}/>} {copied ? 'Copied' : 'Copy'}</button></div><pre><code>{snippets[codeTab]}</code></pre></div><div className="hero-actions"><a className="secondary" href="/datasets/utm/latest/manifest.json"><FileJson size={15}/> Dataset manifest</a><a className="secondary" href="https://api.gapwise.ca/v1"><Braces size={15}/> Stable API</a><a className="secondary" href="https://docs.gapwise.ca/data/"><BookOpen size={15}/> Reuse guide</a><a className="secondary" href="/contribute"><MapPinned size={15}/> Contribute campus data</a></div></section>
 
         <section className="section shell principles"><div><ShieldCheck size={28}/><div className="kicker">Data principles</div><h2>Trust is part of the dataset.</h2></div><div className="principle-list">{[['01','Explain transformations','Document how source material becomes application data.'],['02','Separate fact from inference','Derived navigation geometry should never masquerade as direct observation.'],['03','Prefer stable identifiers','Names change. Durable codes and source IDs make integrations more resilient.'],['04','Preserve provenance','A useful record should carry enough context to understand where it came from.']].map(([n,title,copy]) => <article key={n}><span>{n}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}</div></section>
       </main>
 
-      <footer><div className="shell footer-inner"><a className="brand" href="#top"><img src="/logo-mark.svg" alt=""/><span>Gapwise Data</span></a><p>Independent project · Not an official University of Toronto service.</p><a href="/contribute">Contribute</a><a href="https://gapwise.ca">App <ExternalLink size={12}/></a><a href="https://gapwise.ca/developers">Developers <ExternalLink size={12}/></a><a href="https://docs.gapwise.ca/data/">Docs <ExternalLink size={12}/></a><a href="https://api.gapwise.ca/v1">API <ExternalLink size={12}/></a><a href="https://status.gapwise.ca">Status <ExternalLink size={12}/></a><a href={DATA_REPOSITORY}>Repository <ExternalLink size={12}/></a></div></footer>
+      <footer><div className="shell footer-inner"><a className="brand" href="#top"><img src="/logo-mark.svg" alt=""/><span>Gapwise Data</span></a><p>Canada's open multi-university campus dataset · Independent open-source project.</p><a href="/contribute">Contribute</a><a href="https://gapwise.ca">App <ExternalLink size={12}/></a><a href="https://gapwise.ca/developers">Developers <ExternalLink size={12}/></a><a href="https://docs.gapwise.ca/data/">Docs <ExternalLink size={12}/></a><a href="https://api.gapwise.ca/v1">API <ExternalLink size={12}/></a><a href="https://status.gapwise.ca">Status <ExternalLink size={12}/></a><a href={DATA_REPOSITORY}>Repository <ExternalLink size={12}/></a></div></footer>
     </>
   );
 }

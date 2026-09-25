@@ -14,6 +14,7 @@ import {
 import {
   CAMPUSES,
   CAMPUS_IDS,
+  UNIVERSITIES,
   MAP_HEIGHT,
   MAP_WIDTH,
   campusFromQuery,
@@ -27,6 +28,7 @@ import {
   metersBetween,
   tilesForCampus,
   todayLocalDate,
+  universityForCampus,
 } from './campus-contribution-data.js';
 import './campus-contribution.css';
 
@@ -154,6 +156,7 @@ function machinePayload(items) {
   return {
     schemaVersion: 3,
     contributionType: 'campus_map_batch',
+    universities: [...new Set(items.map((item) => CAMPUSES[item.campus]?.universityId || 'unknown'))],
     campuses: [...new Set(items.map((item) => item.campus))],
     items: items.map((item) => {
       if (item.type === 'entrance') {
@@ -206,7 +209,14 @@ function machinePayload(items) {
 }
 
 function issueTitle(items) {
-  const campuses = [...new Set(items.map((item) => CAMPUSES[item.campus]?.shortName || item.campus.toUpperCase()))];
+  const campuses = [
+    ...new Set(
+      items.map((item) => {
+        const c = CAMPUSES[item.campus];
+        return c?.shortName || item.campus.toUpperCase();
+      }),
+    ),
+  ];
   return `Campus map contribution: ${campuses.join(' + ')} (${items.length} changes)`;
 }
 
@@ -220,7 +230,7 @@ function issueBody(items) {
     .join('\n');
 
   return `## Campus map contribution\n\n**Changes:** ${items.length}  \n**Campuses:** ${[
-    ...new Set(items.map((item) => CAMPUSES[item.campus]?.shortName)),
+    ...new Set(items.map((item) => CAMPUSES[item.campus]?.shortName || item.campus)),
   ].join(', ')}\n\nThis batch was drawn visually in the Gapwise Data contribution studio. It may contain entrances, building footprints, and pedestrian paths. Claims default to **unknown** unless the contributor explicitly changes them.\n\n### Changes\n\n| # | Campus | Type | Name / target | Geometry |\n|---:|---|---|---|---|\n${rows}\n\n### Machine-readable contribution\n\n\`\`\`json\n${JSON.stringify(machinePayload(items), null, 2)}\n\`\`\`\n\n---\nSubmitted from [Gapwise Data](${DATA_REPOSITORY}).`;
 }
 
@@ -238,6 +248,22 @@ export default function CampusContributionStudio() {
   const [items, setItems] = useState([]);
   const [notice, setNotice] = useState('');
   const svgRef = useRef(null);
+
+  const currentUniversityId = universityForCampus(campusId);
+  const currentUniversity = useMemo(
+    () => UNIVERSITIES.find((u) => u.id === currentUniversityId) || UNIVERSITIES[0],
+    [currentUniversityId],
+  );
+
+  function handleSelectUniversity(nextUniId) {
+    const uni = UNIVERSITIES.find((u) => u.id === nextUniId);
+    if (!uni) return;
+    setCampus(uni.defaultCampus);
+  }
+
+  function handleSelectCampus(nextCampusId) {
+    setCampus(nextCampusId);
+  }
 
   const projection = useMemo(() => createCampusProjection(campusId), [campusId]);
   const { project, unproject } = projection;
@@ -502,7 +528,7 @@ export default function CampusContributionStudio() {
     : [];
 
   const warningCount = draftEntrances.filter((entry) => {
-    if (campusId !== 'utm' || entry.buildingSource !== 'canonical') return false;
+    if (entry.buildingSource !== 'canonical') return false;
     return canonicalEntrances.some(
       (feature) =>
         feature.properties.buildingCode?.toUpperCase() === entry.buildingCode &&
@@ -530,18 +556,40 @@ export default function CampusContributionStudio() {
       </header>
 
       <div className="campus-campusbar">
-        <span>Campus</span>
-        {CAMPUS_IDS.map((id) => (
-          <button
-            type="button"
-            key={id}
-            className={campusId === id ? 'active' : ''}
-            onClick={() => setCampus(id)}
-          >
-            <strong>{CAMPUSES[id].shortName}</strong>
-            <small>{CAMPUSES[id].name}</small>
-          </button>
-        ))}
+        <span className="campus-bar-label">University</span>
+        <div className="campus-bar-group">
+          {UNIVERSITIES.map((uni) => (
+            <button
+              type="button"
+              key={uni.id}
+              className={currentUniversityId === uni.id ? 'active' : ''}
+              onClick={() => handleSelectUniversity(uni.id)}
+            >
+              <strong>{uni.shortName}</strong>
+              <small>{uni.name}</small>
+            </button>
+          ))}
+        </div>
+
+        {currentUniversity.campuses.length > 1 && (
+          <>
+            <span className="campus-bar-divider" aria-hidden="true" />
+            <span className="campus-bar-label">Campus</span>
+            <div className="campus-bar-group">
+              {currentUniversity.campuses.map((camp) => (
+                <button
+                  type="button"
+                  key={camp.id}
+                  className={campusId === camp.id ? 'active' : ''}
+                  onClick={() => handleSelectCampus(camp.id)}
+                >
+                  <strong>{camp.shortName}</strong>
+                  <small>{camp.name}</small>
+                </button>
+              ))}
+            </div>
+          </>
+        )}
       </div>
 
       <main className="campus-main">
