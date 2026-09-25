@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "institution": "queens",
+  "sources": [
+    {
+      "id": "queens-official-map-2025",
+      "title": "Queen's University Campus Map",
+      "url": "https://www.queensu.ca/facilities/maps/campus-map",
+      "retrievedAt": "2026-09-24",
+      "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+      "redistribution": "permitted",
+      "transformation": "Cross-checked individual factual building names, codes, and locations",
+      "attribution": "Queen's University"
+    }
+  ],
+  "terms": [],
+  "courses": []
+}
