@@ -14,6 +14,8 @@ import carletonCampus from '../universities/carleton/campus.json';
 import tmuCampus from '../universities/tmu/campus.json';
 import queensCampus from '../universities/queens/campus.json';
 import laurierCampus from '../universities/laurier/campus.json';
+import yorkCampus from '../universities/york/campus.json';
+import mcmasterCampus from '../universities/mcmaster/campus.json';
 
 const utsgFootprints = JSON.parse(utsgFootprintsJson);
 const utscFootprints = JSON.parse(utscFootprintsJson);
@@ -88,6 +90,20 @@ const LAURIER_FALLBACK = {
   maxLon: -80.523,
   minLat: 43.47,
   maxLat: 43.479,
+};
+
+const YORK_FALLBACK = {
+  minLon: -79.515,
+  maxLon: -79.493,
+  minLat: 43.766,
+  maxLat: 43.782,
+};
+
+const MCMASTER_FALLBACK = {
+  minLon: -79.932,
+  maxLon: -79.910,
+  minLat: 43.256,
+  maxLat: 43.268,
 };
 
 const TRI_CAMPUS_REGISTRIES = {
@@ -170,6 +186,8 @@ const CARLETON_FOOTPRINTS = universityFootprints(carletonCampus);
 const TMU_FOOTPRINTS = universityFootprints(tmuCampus);
 const QUEENS_FOOTPRINTS = universityFootprints(queensCampus);
 const LAURIER_FOOTPRINTS = universityFootprints(laurierCampus);
+const YORK_FOOTPRINTS = universityFootprints(yorkCampus);
+const MCMASTER_FOOTPRINTS = universityFootprints(mcmasterCampus);
 
 function importedBuildingsForCampus(campusId) {
   const registry = TRI_CAMPUS_REGISTRIES[campusId];
@@ -247,6 +265,24 @@ export const UNIVERSITIES = [
       { id: 'laurier', name: 'Waterloo Campus', shortName: 'Laurier' },
     ],
   },
+  {
+    id: 'york',
+    name: 'York University',
+    shortName: 'York',
+    defaultCampus: 'york',
+    campuses: [
+      { id: 'york', name: 'Keele Campus', shortName: 'York' },
+    ],
+  },
+  {
+    id: 'mcmaster',
+    name: 'McMaster University',
+    shortName: 'McMaster',
+    defaultCampus: 'mcmaster',
+    campuses: [
+      { id: 'mcmaster', name: 'Main Campus', shortName: 'McMaster' },
+    ],
+  },
 ];
 
 export const CAMPUSES = {
@@ -306,6 +342,22 @@ export const CAMPUSES = {
     bounds: boundsFromFeatures(LAURIER_FOOTPRINTS, LAURIER_FALLBACK),
     tileZoom: 17,
   },
+  york: {
+    id: 'york',
+    universityId: 'york',
+    shortName: 'York',
+    name: 'York University (Keele Campus)',
+    bounds: boundsFromFeatures(YORK_FOOTPRINTS, YORK_FALLBACK),
+    tileZoom: 16,
+  },
+  mcmaster: {
+    id: 'mcmaster',
+    universityId: 'mcmaster',
+    shortName: 'McMaster',
+    name: 'McMaster University',
+    bounds: boundsFromFeatures(MCMASTER_FOOTPRINTS, MCMASTER_FALLBACK),
+    tileZoom: 16,
+  },
 };
 
 export const CAMPUS_IDS = Object.keys(CAMPUSES);
@@ -339,6 +391,8 @@ export function canonicalBuildingsForCampus(campusId) {
   if (campusId === 'tmu') return universityBuildings(tmuCampus, 'tmu');
   if (campusId === 'queens') return universityBuildings(queensCampus, 'queens');
   if (campusId === 'laurier') return universityBuildings(laurierCampus, 'laurier');
+  if (campusId === 'york' || campusId === 'keele') return universityBuildings(yorkCampus, 'york');
+  if (campusId === 'mcmaster') return universityBuildings(mcmasterCampus, 'mcmaster');
   return [];
 }
 
@@ -349,6 +403,8 @@ export function canonicalFootprintsForCampus(campusId) {
   if (campusId === 'tmu') return TMU_FOOTPRINTS;
   if (campusId === 'queens') return QUEENS_FOOTPRINTS;
   if (campusId === 'laurier') return LAURIER_FOOTPRINTS;
+  if (campusId === 'york' || campusId === 'keele') return YORK_FOOTPRINTS;
+  if (campusId === 'mcmaster') return MCMASTER_FOOTPRINTS;
   return [];
 }
 
@@ -358,6 +414,8 @@ export function canonicalEntrancesForCampus(campusId) {
   if (campusId === 'tmu') return universityEntrances(tmuCampus);
   if (campusId === 'queens') return universityEntrances(queensCampus);
   if (campusId === 'laurier') return universityEntrances(laurierCampus);
+  if (campusId === 'york' || campusId === 'keele') return universityEntrances(yorkCampus);
+  if (campusId === 'mcmaster') return universityEntrances(mcmasterCampus);
   return [];
 }
 

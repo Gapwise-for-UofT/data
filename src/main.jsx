@@ -5,9 +5,9 @@ import './styles.css';
 import './accent-theme.css';
 
 const datasets = [
-  { name: 'Multi-university campus models', file: 'universities/*/campus.json', type: 'JSON', status: 'Maintained', description: 'Comprehensive campus schemas with verified buildings, entrances, path graphs, and provenance across all 5 universities.', fields: ['institution', 'campus', 'buildings', 'entrances', 'pathNodes', 'pathEdges'] },
+  { name: 'Multi-university campus models', file: 'universities/*/campus.json', type: 'JSON', status: 'Maintained', description: 'Comprehensive campus schemas with verified buildings, entrances, path graphs, and provenance across all 7 universities.', fields: ['institution', 'campus', 'buildings', 'entrances', 'pathNodes', 'pathEdges'] },
   { name: 'Building registry', file: 'building-registry.ts', type: 'Registry', status: 'Maintained', description: 'Canonical building codes, names, aliases, categories and room-to-floor interpretation rules.', fields: ['code', 'name', 'category', 'aliases', 'roomFloorRule'] },
-  { name: 'Campus buildings & footprints', file: 'buildings.geojson', type: 'GeoJSON', status: 'Derived + reviewed', description: 'Navigation points, polygon footprints, and canonical metadata spanning U of T, Carleton, TMU, Queen\'s, and Laurier.', fields: ['geometry', 'code', 'name', 'geometryRole', 'source'] },
+  { name: 'Campus buildings & footprints', file: 'buildings.geojson', type: 'GeoJSON', status: 'Derived + reviewed', description: 'Navigation points, polygon footprints, and canonical metadata spanning U of T, Carleton, TMU, Queen\'s, Laurier, York, and McMaster.', fields: ['geometry', 'code', 'name', 'geometryRole', 'source'] },
   { name: 'Entrances & access audits', file: 'generated/campus-access-audit.json', type: 'JSON', status: 'Audited', description: 'Coverage, barrier-free access, and verification information for exterior entrances and approach networks.', fields: ['code', 'canonicalGeometry', 'verifiedExteriorEntrances', 'inferredApproaches'] },
 ];
 
@@ -65,7 +65,7 @@ function App() {
         <section className="hero shell">
           <div className="eyebrow"><Sparkles size={13}/> GAPWISE DATA</div>
           <h1 className="hero-claim">Canada's largest free and open <span>multi-university</span> campus navigation dataset</h1>
-          <p className="lead">Auditable building geometry, footprints, verified exterior entrances, accessible routes, provenance, schemas, and visual contribution tools spanning the University of Toronto (UTM, UTSG, UTSC), Carleton University, Toronto Metropolitan University (TMU), Queen's University, and Wilfrid Laurier University.</p>
+          <p className="lead">Auditable building geometry, footprints, verified exterior entrances, accessible routes, provenance, schemas, and visual contribution tools spanning the University of Toronto (UTM, UTSG, UTSC), Carleton University, Toronto Metropolitan University (TMU), Queen's University, Wilfrid Laurier University, York University, and McMaster University.</p>
           <div className="hero-actions">
             <a className="primary" href="/contribute"><MapPinned size={15}/> Contribute campus data <ChevronRight size={16}/></a>
             <a className="secondary" href="#datasets"><Database size={15}/> Explore the data</a>
@@ -73,8 +73,8 @@ function App() {
             <a className="secondary" href={`${DATA_REPOSITORY}/tree/main/universities`}><Braces size={15}/> View source</a>
           </div>
           <div className="stats">
-            <div><strong>5</strong><span>Universities</span></div>
-            <div><strong>7</strong><span>Campus models</span></div>
+            <div><strong>7</strong><span>Universities</span></div>
+            <div><strong>9</strong><span>Campus models</span></div>
             <div><strong>Auditable</strong><span>Provenance-first</span></div>
             <div><strong>Open source</strong><span>Visual studio</span></div>
           </div>
