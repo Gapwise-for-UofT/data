@@ -32,7 +32,7 @@ import {
 } from './campus-contribution-data.js';
 import './campus-contribution.css';
 
-const DATA_REPOSITORY = 'https://github.com/Gapwise-for-UofT/data';
+const DATA_REPOSITORY = 'https://github.com/GapwiseHQ/data';
 const DUPLICATE_WARNING_METERS = 7;
 const MAX_ITEMS = 120;
 
