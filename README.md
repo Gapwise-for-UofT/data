@@ -23,11 +23,17 @@
 
 ## What Gapwise Data is
 
-`data` is the **canonical repository for campus facts and geometry used by Gapwise**. It contains campus-scoped building registries and source-backed map geometry for UTM, UTSG, UTSC, and Carleton. The mature [`data/utm`](data/utm) dataset additionally contains entrances, routing graph inputs, indoor/outdoor graph artifacts, provenance, confidence metadata, and generated audit data.
+`data` is the **canonical repository for campus facts and geometry used by Gapwise**. It contains campus-scoped building registries, verified entrances, and source-backed map geometry across **7 universities and 9 campus models**:
 
-The validated [`universities/carleton/campus.json`](universities/carleton/campus.json) and [`academic.json`](universities/carleton/academic.json) snapshots were migrated byte for byte from `carleton-data`. Their [source register](docs/universities/carleton-sources.md), [schemas](schemas/universities), and validation tests moved with them. Carleton's graph has mapped outdoor pedestrian ways, but most entrance access is unknown and no pair of buildings has verified public entrance connections at both ends. The application presents route uncertainty accordingly.
+1. **University of Toronto**: UTM, UTSG, UTSC
+2. **Carleton University**: Main Campus
+3. **Toronto Metropolitan University**: Downtown Campus
+4. **Queen's University**: Kingston Campus
+5. **Wilfrid Laurier University**: Waterloo Campus
+6. **York University**: Keele Campus
+7. **McMaster University**: Hamilton Campus
 
-Gapwise supports timetable identity, campus-scoped building resolution, and web building maps across **UTM, UTSG, UTSC, and mixed-campus schedules**. UTSG and UTSC currently have source-backed identity inventories and building footprints with explicit unresolved coverage. Reviewed entrances, pedestrian routing, campus places, and the production raw-data distribution currently cover UTM.
+The validated snapshots under [`universities/`](universities/) and [`data/`](data/) include source registers, schemas, footprints, and validation tests. Each campus model represents pedestrian networks, building geometries, entrance coordinates, and routing topologies tailored to that campus, with explicit representation of route uncertainty and entrance verification state.
 
 The main [`gapwise`](https://github.com/GapwiseHQ/gapwise) repository remains authoritative for deterministic product behavior: timetable semantics, route calculation, gap planning, public API orchestration, SDK contracts, and map/product presentation. It vendors a checked-in snapshot of this repository's campus data so production routing never depends on `data.gapwise.ca` or GitHub being reachable at request time.
 
@@ -154,7 +160,7 @@ It verifies, among other things:
 | **[`android`](https://github.com/GapwiseHQ/android)** | Native Kotlin + Jetpack Compose Android client | Android app |
 | **[`ios`](https://github.com/GapwiseHQ/ios)** | Native Swift + SwiftUI iOS client | iOS app |
 | **[`ai`](https://github.com/GapwiseHQ/ai)** | OAuth/MCP layer for explicitly delegated student context and bounded actions | [ai.gapwise.ca](https://ai.gapwise.ca) |
-| **[`data`](https://github.com/GapwiseHQ/data)** | **Canonical public University of Toronto campus data, provenance, schemas, validation, and distribution** | [data.gapwise.ca](https://data.gapwise.ca) |
+| **[`data`](https://github.com/GapwiseHQ/data)** | **Canonical public multi-university campus data, provenance, schemas, validation, and distribution across 7 Canadian universities** | [data.gapwise.ca](https://data.gapwise.ca) |
 | **[`docs`](https://github.com/GapwiseHQ/docs)** | Canonical public developer documentation | [docs.gapwise.ca](https://docs.gapwise.ca) |
 | **[`status`](https://github.com/GapwiseHQ/status)** | Independent service-health monitoring and incident communication | [status.gapwise.ca](https://status.gapwise.ca) |
 
@@ -220,7 +226,7 @@ including the public snapshot, before running core's campus contract tests.
 
 ## Independent project
 
-> **Gapwise is an independent student software project created by Andrew Muratov. It is not affiliated with, endorsed by, or an official service of the University of Toronto.**
+> **Gapwise is an independent student software project created by Andrew Muratov. It is not affiliated with, endorsed by, or an official service of the University of Toronto, Carleton University, Toronto Metropolitan University, Queen's University, Wilfrid Laurier University, York University, or McMaster University.**
 
 <div align="center">
 
