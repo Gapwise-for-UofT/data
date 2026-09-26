@@ -15,7 +15,7 @@
 
 <br />
 
-**[Gapwise](https://gapwise.ca)** · **[Android](https://github.com/Gapwise-for-UofT/android)** · **[iOS](https://github.com/Gapwise-for-UofT/ios)** · **[API](https://api.gapwise.ca/v1)** · **[AI](https://ai.gapwise.ca)** · **[Data](https://data.gapwise.ca)** · **[Docs](https://docs.gapwise.ca)** · **[Status](https://status.gapwise.ca)**
+**[Gapwise](https://gapwise.ca)** · **[Android](https://github.com/GapwiseHQ/android)** · **[iOS](https://github.com/GapwiseHQ/ios)** · **[API](https://api.gapwise.ca/v1)** · **[AI](https://ai.gapwise.ca)** · **[Data](https://data.gapwise.ca)** · **[Docs](https://docs.gapwise.ca)** · **[Status](https://status.gapwise.ca)**
 
 </div>
 
@@ -29,7 +29,7 @@ The validated [`universities/carleton/campus.json`](universities/carleton/campus
 
 Gapwise supports timetable identity, campus-scoped building resolution, and web building maps across **UTM, UTSG, UTSC, and mixed-campus schedules**. UTSG and UTSC currently have source-backed identity inventories and building footprints with explicit unresolved coverage. Reviewed entrances, pedestrian routing, campus places, and the production raw-data distribution currently cover UTM.
 
-The main [`gapwise`](https://github.com/Gapwise-for-UofT/gapwise) repository remains authoritative for deterministic product behavior: timetable semantics, route calculation, gap planning, public API orchestration, SDK contracts, and map/product presentation. It vendors a checked-in snapshot of this repository's campus data so production routing never depends on `data.gapwise.ca` or GitHub being reachable at request time.
+The main [`gapwise`](https://github.com/GapwiseHQ/gapwise) repository remains authoritative for deterministic product behavior: timetable semantics, route calculation, gap planning, public API orchestration, SDK contracts, and map/product presentation. It vendors a checked-in snapshot of this repository's campus data so production routing never depends on `data.gapwise.ca` or GitHub being reachable at request time.
 
 > **`data` owns campus facts. `gapwise` owns product behavior.**
 
@@ -150,13 +150,13 @@ It verifies, among other things:
 
 | Repository | Role | Primary surface |
 | --- | --- | --- |
-| **[`gapwise`](https://github.com/Gapwise-for-UofT/gapwise)** | Core web/PWA, canonical timetable/gap/routing semantics, public API, OpenAPI, and SDK source | [gapwise.ca](https://gapwise.ca) / [api.gapwise.ca](https://api.gapwise.ca/v1) |
-| **[`android`](https://github.com/Gapwise-for-UofT/android)** | Native Kotlin + Jetpack Compose Android client | Android app |
-| **[`ios`](https://github.com/Gapwise-for-UofT/ios)** | Native Swift + SwiftUI iOS client | iOS app |
-| **[`ai`](https://github.com/Gapwise-for-UofT/ai)** | OAuth/MCP layer for explicitly delegated student context and bounded actions | [ai.gapwise.ca](https://ai.gapwise.ca) |
-| **[`data`](https://github.com/Gapwise-for-UofT/data)** | **Canonical public University of Toronto campus data, provenance, schemas, validation, and distribution** | [data.gapwise.ca](https://data.gapwise.ca) |
-| **[`docs`](https://github.com/Gapwise-for-UofT/docs)** | Canonical public developer documentation | [docs.gapwise.ca](https://docs.gapwise.ca) |
-| **[`status`](https://github.com/Gapwise-for-UofT/status)** | Independent service-health monitoring and incident communication | [status.gapwise.ca](https://status.gapwise.ca) |
+| **[`gapwise`](https://github.com/GapwiseHQ/gapwise)** | Core web/PWA, canonical timetable/gap/routing semantics, public API, OpenAPI, and SDK source | [gapwise.ca](https://gapwise.ca) / [api.gapwise.ca](https://api.gapwise.ca/v1) |
+| **[`android`](https://github.com/GapwiseHQ/android)** | Native Kotlin + Jetpack Compose Android client | Android app |
+| **[`ios`](https://github.com/GapwiseHQ/ios)** | Native Swift + SwiftUI iOS client | iOS app |
+| **[`ai`](https://github.com/GapwiseHQ/ai)** | OAuth/MCP layer for explicitly delegated student context and bounded actions | [ai.gapwise.ca](https://ai.gapwise.ca) |
+| **[`data`](https://github.com/GapwiseHQ/data)** | **Canonical public University of Toronto campus data, provenance, schemas, validation, and distribution** | [data.gapwise.ca](https://data.gapwise.ca) |
+| **[`docs`](https://github.com/GapwiseHQ/docs)** | Canonical public developer documentation | [docs.gapwise.ca](https://docs.gapwise.ca) |
+| **[`status`](https://github.com/GapwiseHQ/status)** | Independent service-health monitoring and incident communication | [status.gapwise.ca](https://status.gapwise.ca) |
 
 No consumer repository should recreate or silently fork campus facts. Native clients and product surfaces may adapt presentation and platform integration, but source campus facts belong here and deterministic product calculations belong to `gapwise`.
 
@@ -164,7 +164,7 @@ No consumer repository should recreate or silently fork campus facts. Native cli
 
 ## For developers
 
-- **GitHub organization:** https://github.com/Gapwise-for-UofT
+- **GitHub organization:** https://github.com/GapwiseHQ
 - **Developer hub:** https://gapwise.ca/developers
 - **Developer docs:** https://docs.gapwise.ca
 - **Data docs:** https://docs.gapwise.ca/data/
@@ -187,7 +187,7 @@ Original repository code and documentation are [MIT licensed](LICENSE), but upst
 ## Local development
 
 ```bash
-git clone https://github.com/Gapwise-for-UofT/data.git
+git clone https://github.com/GapwiseHQ/data.git
 cd data
 npm ci
 npm run data:preflight

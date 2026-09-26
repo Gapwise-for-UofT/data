@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "canonicalRepository": "Gapwise-for-UofT/data",
+  "canonicalRepository": "GapwiseHQ/data",
   "canonicalPath": "data/utm",
   "bootstrappedFrom": {
     "repository": "andrewmuratov/gapwise",

@@ -34,7 +34,7 @@ jobs:
       - name: Check out current Gapwise core
         uses: actions/checkout@v4
         with:
-          repository: Gapwise-for-UofT/gapwise
+          repository: GapwiseHQ/gapwise
           ref: main
           path: gapwise
 

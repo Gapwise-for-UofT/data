@@ -8,12 +8,12 @@ The repository contains source-backed building identity and map geometry for UTM
 
 | Surface | Canonical location | Relationship to Gapwise Data |
 | --- | --- | --- |
-| Student web/PWA + public API + SDK source | `Gapwise-for-UofT/gapwise` | vendors a validated campus-data snapshot and owns deterministic routing/gap-planning behavior plus public API/SDK contracts |
-| Native Android | `Gapwise-for-UofT/android` | consumes Gapwise product/API contracts; it must not maintain a parallel UTM dataset |
-| Native iOS | `Gapwise-for-UofT/ios` | consumes Gapwise product/API contracts; it must not maintain a parallel UTM dataset |
-| AI/MCP | `Gapwise-for-UofT/ai` | exposes deterministic Gapwise campus semantics through MCP and delegated context; it is not a data-authority replacement |
-| Developer docs | `Gapwise-for-UofT/docs` | documents released API/SDK contracts and links raw data/provenance back here |
-| Status | `Gapwise-for-UofT/status` | monitors public service health independently and does not depend on raw campus data for routing semantics |
+| Student web/PWA + public API + SDK source | `GapwiseHQ/gapwise` | vendors a validated campus-data snapshot and owns deterministic routing/gap-planning behavior plus public API/SDK contracts |
+| Native Android | `GapwiseHQ/android` | consumes Gapwise product/API contracts; it must not maintain a parallel UTM dataset |
+| Native iOS | `GapwiseHQ/ios` | consumes Gapwise product/API contracts; it must not maintain a parallel UTM dataset |
+| AI/MCP | `GapwiseHQ/ai` | exposes deterministic Gapwise campus semantics through MCP and delegated context; it is not a data-authority replacement |
+| Developer docs | `GapwiseHQ/docs` | documents released API/SDK contracts and links raw data/provenance back here |
+| Status | `GapwiseHQ/status` | monitors public service health independently and does not depend on raw campus data for routing semantics |
 
 ## Developer-platform state
 
@@ -24,8 +24,8 @@ The repository contains source-backed building identity and map geometry for UTM
   - JSR `0.1.1` is published with provenance through GitHub Actions OIDC
   - one portable TypeScript implementation targets Node, Bun, Deno, and browser consumers rather than separate runtime SDKs
 - Python SDK: `gapwise==0.1.0` is published on PyPI through Trusted Publishing
-- Android source: `https://github.com/Gapwise-for-UofT/android`
-- iOS source: `https://github.com/Gapwise-for-UofT/ios`
+- Android source: `https://github.com/GapwiseHQ/android`
+- iOS source: `https://github.com/GapwiseHQ/ios`
 - Docs: `https://docs.gapwise.ca`
 - Data: `https://data.gapwise.ca`
 - AI/MCP: `https://ai.gapwise.ca/api/mcp`
