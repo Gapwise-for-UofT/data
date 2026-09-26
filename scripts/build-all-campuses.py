@@ -266,6 +266,146 @@ UNIVERSITIES = [
             {"id": "commons-building", "name": "Commons Building", "nativeCodes": ["COMMONS"], "aliases": [], "way_id": "259698072"},
             {"id": "refectory", "name": "Refectory", "nativeCodes": ["REF"], "aliases": [], "way_id": "183246595"}
         ]
+    },
+    {
+        "id": "western",
+        "name": "Western University",
+        "campus_name": "Western University main campus",
+        "bounds": [[-81.285, 43.000], [-81.265, 43.018]],
+        "osm_cache": "/tmp/western_osm.xml",
+        "official_source": {
+            "id": "western-official-map-2025",
+            "title": "Western University Campus Map",
+            "url": "https://www.uwo.ca/about/visit/maps.html",
+            "retrievedAt": "2026-09-26",
+            "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+            "redistribution": "permitted",
+            "transformation": "Cross-checked individual factual building names, codes, and locations",
+            "attribution": "Western University"
+        },
+        "buildings": [
+            {"id": "university-community-centre", "name": "University Community Centre", "nativeCodes": ["UCC"], "aliases": ["Community Centre", "Student Centre"], "way_id": "141710486"},
+            {"id": "social-science-centre", "name": "Social Science Centre", "nativeCodes": ["SSC"], "aliases": ["Social Science"], "way_id": "141710484"},
+            {"id": "natural-sciences-centre", "name": "Natural Sciences Centre", "nativeCodes": ["NSC"], "aliases": ["Natural Sciences"], "way_id": "116779542"},
+            {"id": "middlesex-college", "name": "Middlesex College", "nativeCodes": ["MC"], "aliases": ["Middlesex"], "way_id": "118764099"},
+            {"id": "north-campus-building", "name": "North Campus Building", "nativeCodes": ["NCB"], "aliases": ["North Campus"], "way_id": "142286116"},
+            {"id": "talbot-college", "name": "Talbot College", "nativeCodes": ["TC"], "aliases": ["Talbot"], "way_id": "116779543"},
+            {"id": "spencer-engineering-building", "name": "Spencer Engineering Building", "nativeCodes": ["SEB"], "aliases": ["Spencer Engineering"], "way_id": "118764110"},
+            {"id": "western-science-centre", "name": "Western Science Centre", "nativeCodes": ["WSC"], "aliases": ["Science Centre"], "way_id": "118764093"},
+            {"id": "weldon-library", "name": "The D.B. Weldon Library", "nativeCodes": ["WELDON"], "aliases": ["DBW", "Weldon Library"], "way_id": "118764108"},
+            {"id": "taylor-library", "name": "Allyn and Betty Taylor Library", "nativeCodes": ["TAYLOR"], "aliases": ["Taylor Library"], "way_id": "141710485"},
+            {"id": "arts-humanities-building", "name": "Arts & Humanities Building", "nativeCodes": ["AHB"], "aliases": ["Arts & Humanities"], "way_id": "1203774692"},
+            {"id": "amit-chakma-engineering", "name": "Amit Chakma Engineering Building", "nativeCodes": ["ACEB"], "aliases": ["Chakma Engineering"], "way_id": "626520018"},
+            {"id": "alumni-hall", "name": "Alumni Hall", "nativeCodes": ["AH"], "aliases": [], "way_id": "142216959"},
+            {"id": "somerville-house", "name": "Somerville House", "nativeCodes": ["SH"], "aliases": [], "way_id": "142216964"},
+            {"id": "thames-hall", "name": "Thames Hall", "nativeCodes": ["TH"], "aliases": [], "way_id": "118764095"},
+            {"id": "medical-sciences-building", "name": "Medical Sciences Building", "nativeCodes": ["MSB"], "aliases": ["Medical Sciences"], "way_id": "141710482"},
+            {"id": "health-sciences-building", "name": "Health Sciences Building", "nativeCodes": ["HSB"], "aliases": ["Health Sciences"], "way_id": "126668543"},
+            {"id": "law-building", "name": "Law School", "nativeCodes": ["LB"], "aliases": ["Law Building"], "way_id": "118764097"},
+            {"id": "physics-building", "name": "Physics and Astronomy Building", "nativeCodes": ["PAB"], "aliases": ["Physics Building"], "way_id": "142286122"},
+            {"id": "music-building", "name": "Music Building", "nativeCodes": ["MB"], "aliases": [], "way_id": "1264685790"}
+        ]
+    },
+    {
+        "id": "guelph",
+        "name": "University of Guelph",
+        "campus_name": "University of Guelph main campus",
+        "bounds": [[-80.235, 43.524], [-80.215, 43.538]],
+        "osm_cache": "/tmp/guelph_osm.xml",
+        "official_source": {
+            "id": "guelph-official-map-2025",
+            "title": "University of Guelph Campus Map",
+            "url": "https://www.uoguelph.ca/maps/",
+            "retrievedAt": "2026-09-26",
+            "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+            "redistribution": "permitted",
+            "transformation": "Cross-checked individual factual building names, codes, and locations",
+            "attribution": "University of Guelph"
+        },
+        "buildings": [
+            {"id": "university-centre", "name": "University Centre", "nativeCodes": ["UC"], "aliases": ["Student Centre"], "way_id": "136472535"},
+            {"id": "mclaughlin-library", "name": "McLaughlin Library", "nativeCodes": ["LIB"], "aliases": ["Library"], "way_id": "136469097"},
+            {"id": "rozanski-hall", "name": "Rozanski Hall", "nativeCodes": ["ROZH"], "aliases": ["Rozanski"], "way_id": "136467970"},
+            {"id": "mackinnon-building", "name": "MacKinnon Building", "nativeCodes": ["MCKN"], "aliases": ["MacKinnon"], "way_id": "136468433"},
+            {"id": "macnaughton-building", "name": "MacNaughton Building", "nativeCodes": ["MACN"], "aliases": ["MacNaughton"], "way_id": "136547108"},
+            {"id": "summerlee-science-complex", "name": "Summerlee Science Complex", "nativeCodes": ["SSC"], "aliases": ["Science Complex"], "way_id": "136546715"},
+            {"id": "thornbrough-building", "name": "Albert A. Thornbrough Building", "nativeCodes": ["THRN"], "aliases": ["Thornbrough", "Engineering"], "way_id": "238265421"},
+            {"id": "alexander-hall", "name": "Alexander Hall", "nativeCodes": ["ALXH"], "aliases": ["Alexander"], "way_id": "136547109"},
+            {"id": "johnston-hall", "name": "Johnston Hall", "nativeCodes": ["JH"], "aliases": [], "way_id": "136469992"},
+            {"id": "war-memorial-hall", "name": "War Memorial Hall", "nativeCodes": ["WMH"], "aliases": ["Memorial Hall"], "way_id": "161118801"},
+            {"id": "reynolds-building", "name": "Reynolds Building", "nativeCodes": ["REYN"], "aliases": ["Computing and Information Science"], "way_id": "136472615"},
+            {"id": "hutt-building", "name": "H.L. Hutt Building", "nativeCodes": ["HUTT"], "aliases": ["Hutt"], "way_id": "136472575"},
+            {"id": "animal-science-nutrition", "name": "Animal Science and Nutrition", "nativeCodes": ["ANNU"], "aliases": ["Animal Science"], "way_id": "137354259"},
+            {"id": "creelman-hall", "name": "Creelman Hall", "nativeCodes": ["CREE"], "aliases": [], "way_id": "161119744"},
+            {"id": "athletic-centre", "name": "Guelph Gryphon Athletic Centre", "nativeCodes": ["GGAC"], "aliases": ["Athletic Centre"], "way_id": "136468152"}
+        ]
+    },
+    {
+        "id": "uottawa",
+        "name": "University of Ottawa",
+        "campus_name": "University of Ottawa main campus",
+        "bounds": [[-75.690, 45.416], [-75.674, 45.426]],
+        "osm_cache": "/tmp/uottawa_osm.xml",
+        "official_source": {
+            "id": "uottawa-official-map-2025",
+            "title": "University of Ottawa Campus Map",
+            "url": "https://www.uottawa.ca/about-us/maps",
+            "retrievedAt": "2026-09-26",
+            "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+            "redistribution": "permitted",
+            "transformation": "Cross-checked individual factual building names, codes, and locations",
+            "attribution": "University of Ottawa"
+        },
+        "buildings": [
+            {"id": "university-centre", "name": "Jock Turcot University Centre", "nativeCodes": ["UCU"], "aliases": ["University Centre", "Centre universitaire"], "way_id": "34244686"},
+            {"id": "tabaret-hall", "name": "Tabaret Hall", "nativeCodes": ["TBT"], "aliases": ["Pavillon Tabaret"], "way_id": "68665449"},
+            {"id": "morisset-hall", "name": "Morisset Hall & Library", "nativeCodes": ["MRT"], "aliases": ["Bibliothèque Morisset", "Morisset Library"], "way_id": "68665290"},
+            {"id": "desmarais-building", "name": "Desmarais Building", "nativeCodes": ["DMS"], "aliases": ["Pavillon Desmarais", "Telfer School of Management"], "way_id": "264538297"},
+            {"id": "site-building", "name": "SITE Building", "nativeCodes": ["STE"], "aliases": ["School of Electrical Engineering and Computer Science"], "way_id": "34244676"},
+            {"id": "faculty-social-sciences", "name": "Faculty of Social Sciences Building", "nativeCodes": ["FSS"], "aliases": ["Faculté des sciences sociales"], "way_id": "638327786"},
+            {"id": "montpetit-hall", "name": "Montpetit Hall", "nativeCodes": ["MNT"], "aliases": ["Pavillon Montpetit"], "way_id": "162799164"},
+            {"id": "marion-hall", "name": "Marion Hall", "nativeCodes": ["MRN"], "aliases": ["Pavillon Marion"], "way_id": "68709953"},
+            {"id": "simard-hall", "name": "Simard Hall", "nativeCodes": ["SMD"], "aliases": ["Pavillon Simard"], "way_id": "68665368"},
+            {"id": "hamelin-hall", "name": "Hamelin Hall", "nativeCodes": ["MHN"], "aliases": ["Arts Hall", "Pavillon Hamelin"], "way_id": "123936823"},
+            {"id": "colonel-by-hall", "name": "Colonel By Hall", "nativeCodes": ["CBY"], "aliases": ["Pavillon Colonel By"], "way_id": "68710212"},
+            {"id": "stem-complex", "name": "STEM Complex", "nativeCodes": ["STM"], "aliases": ["Complexe STEM"], "way_id": "638327766"},
+            {"id": "lamoureux-hall", "name": "Lamoureux Hall", "nativeCodes": ["LMX"], "aliases": ["Pavillon Lamoureux"], "way_id": "164257817"},
+            {"id": "learning-crossroads", "name": "Learning Crossroads", "nativeCodes": ["CRX"], "aliases": ["Carrefour des apprentissages"], "way_id": "638327780"},
+            {"id": "advanced-research-complex", "name": "Advanced Research Complex", "nativeCodes": ["ARC"], "aliases": ["Complexe de recherche avancée"], "way_id": "307247853"},
+            {"id": "perez-hall", "name": "Pérez Hall", "nativeCodes": ["PRZ"], "aliases": ["Pavillon Pérez", "Music Building"], "way_id": "165790733"},
+            {"id": "fauteux-hall", "name": "Fauteux Hall", "nativeCodes": ["FTX"], "aliases": ["Pavillon Fauteux", "Faculty of Law"], "way_id": "68665491"}
+        ]
+    },
+    {
+        "id": "brock",
+        "name": "Brock University",
+        "campus_name": "Brock University main campus",
+        "bounds": [[-79.256, 43.112], [-79.240, 43.125]],
+        "osm_cache": "/tmp/brock_osm.xml",
+        "official_source": {
+            "id": "brock-official-map-2025",
+            "title": "Brock University Campus Map",
+            "url": "https://brocku.ca/facilities-management/campus-maps/",
+            "retrievedAt": "2026-09-26",
+            "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+            "redistribution": "permitted",
+            "transformation": "Cross-checked individual factual building names, codes, and locations",
+            "attribution": "Brock University"
+        },
+        "buildings": [
+            {"id": "arthur-schmon-tower", "name": "Arthur Schmon Tower", "nativeCodes": ["ST"], "aliases": ["Schmon Tower", "Library Tower"], "way_id": "1080586464"},
+            {"id": "thistle-complex", "name": "Thistle Complex", "nativeCodes": ["TH"], "aliases": ["Thistle"], "way_id": "1080586463"},
+            {"id": "mackenzie-chown-complex", "name": "Mackenzie Chown Complex", "nativeCodes": ["MC"], "aliases": ["Mackenzie Chown"], "way_id": "1182288086"},
+            {"id": "goodman-school-business", "name": "Goodman School of Business", "nativeCodes": ["GSB"], "aliases": ["Taro Hall", "Goodman"], "way_id": "1080586460"},
+            {"id": "plaza-building", "name": "Plaza Building", "nativeCodes": ["PLZ"], "aliases": ["Plaza"], "way_id": "1080586457"},
+            {"id": "cairns-complex", "name": "The Roy and Lois Cairns Health and Bioscience Research Complex", "nativeCodes": ["CFHBRC"], "aliases": ["Cairns Complex"], "way_id": "473685802"},
+            {"id": "walker-complex", "name": "Walker Sports Complex", "nativeCodes": ["WC"], "aliases": ["Walker Complex", "Physical Education"], "way_id": "1080586467"},
+            {"id": "welch-hall", "name": "Robert S.K. Welch Hall", "nativeCodes": ["WH"], "aliases": ["Welch Hall"], "way_id": "1080586461"},
+            {"id": "decew-residence", "name": "DeCew Residence", "nativeCodes": ["DEC"], "aliases": [], "way_id": "184797648"},
+            {"id": "lowenberger-residence", "name": "Lowenberger Residence", "nativeCodes": ["LOW"], "aliases": [], "way_id": "184703451"},
+            {"id": "inniskillin-hall", "name": "Inniskillin Hall", "nativeCodes": ["IH"], "aliases": ["CCOVI"], "way_id": "1182288085"},
+            {"id": "international-centre", "name": "International Centre", "nativeCodes": ["IC"], "aliases": [], "way_id": "810640947"}
+        ]
     }
 ]
 

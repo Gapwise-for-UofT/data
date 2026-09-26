@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "institution": "brock",
+  "sources": [
+    {
+      "id": "brock-official-map-2025",
+      "title": "Brock University Campus Map",
+      "url": "https://brocku.ca/facilities-management/campus-maps/",
+      "retrievedAt": "2026-09-26",
+      "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+      "redistribution": "permitted",
+      "transformation": "Cross-checked individual factual building names, codes, and locations",
+      "attribution": "Brock University"
+    }
+  ],
+  "terms": [],
+  "courses": []
+}
