@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "institution": "mcmaster",
+  "sources": [
+    {
+      "id": "mcmaster-official-map-2025",
+      "title": "McMaster University Campus Map",
+      "url": "https://www.mcmaster.ca/welcome/campusmap.cfm",
+      "retrievedAt": "2026-09-26",
+      "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+      "redistribution": "permitted",
+      "transformation": "Cross-checked individual factual building names, codes, and locations",
+      "attribution": "McMaster University"
+    }
+  ],
+  "terms": [],
+  "courses": []
+}

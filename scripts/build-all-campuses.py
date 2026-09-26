@@ -162,6 +162,110 @@ UNIVERSITIES = [
             {"id": "macdonald-house", "name": "MacDonald House", "nativeCodes": ["MH"], "aliases": [], "way_id": "113027056"},
             {"id": "claudette-millar-hall", "name": "Claudette Millar Hall", "nativeCodes": ["CMH"], "aliases": [], "way_id": "382872689"}
         ]
+    },
+    {
+        "id": "york",
+        "name": "York University",
+        "campus_name": "York University Keele campus",
+        "bounds": [[-79.515, 43.766], [-79.493, 43.782]],
+        "osm_cache": "/tmp/york_osm.xml",
+        "official_source": {
+            "id": "york-official-map-2025",
+            "title": "York University Keele Campus Map",
+            "url": "https://maps.info.yorku.ca/keele-campus/",
+            "retrievedAt": "2026-09-26",
+            "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+            "redistribution": "permitted",
+            "transformation": "Cross-checked individual factual building names, codes, and locations",
+            "attribution": "York University"
+        },
+        "buildings": [
+            {"id": "vari-hall", "name": "Vari Hall", "nativeCodes": ["VH"], "aliases": ["Vari"], "way_id": "839208347"},
+            {"id": "curtis-lecture-halls", "name": "Curtis Lecture Halls", "nativeCodes": ["CLH"], "aliases": ["Curtis"], "way_id": "29003786"},
+            {"id": "lassonde-building", "name": "Lassonde Building", "nativeCodes": ["LAS"], "aliases": ["Computer Science and Engineering", "CSE"], "way_id": "29003909"},
+            {"id": "ross-building", "name": "Ross Building", "nativeCodes": ["ROSS"], "aliases": ["Ross"], "way_id": "839466831"},
+            {"id": "scott-library", "name": "Scott Library", "nativeCodes": ["SCL"], "aliases": ["Library"], "way_id": "29003851"},
+            {"id": "bergeron-centre", "name": "Bergeron Centre for Engineering Excellence", "nativeCodes": ["BRG"], "aliases": ["Bergeron"], "way_id": "239605501"},
+            {"id": "dahdaleh-building", "name": "Victor Phillip Dahdaleh Building", "nativeCodes": ["DB"], "aliases": ["Technology and Enhanced Learning", "TEL"], "way_id": "29003554"},
+            {"id": "accolade-east", "name": "Accolade East", "nativeCodes": ["ACE"], "aliases": ["Accolade E"], "way_id": "157967627"},
+            {"id": "accolade-west", "name": "Accolade West", "nativeCodes": ["ACW"], "aliases": ["Accolade W"], "way_id": "157967629"},
+            {"id": "steacie-library", "name": "Steacie Science and Engineering Library", "nativeCodes": ["STL"], "aliases": ["Steacie"], "way_id": "29003925"},
+            {"id": "stedman-lecture-halls", "name": "Stedman Lecture Halls", "nativeCodes": ["SLH"], "aliases": ["Stedman"], "way_id": "239783177"},
+            {"id": "schulich-building", "name": "Seymour Schulich Building", "nativeCodes": ["SSB"], "aliases": ["Schulich School of Business", "Schulich"], "way_id": "534798733"},
+            {"id": "first-student-centre", "name": "First Student Centre", "nativeCodes": ["STC"], "aliases": ["Student Centre"], "way_id": "29003676"},
+            {"id": "second-student-centre", "name": "Second Student Centre", "nativeCodes": ["SSC"], "aliases": ["New Student Centre"], "way_id": "611977369"},
+            {"id": "tait-mckenzie-centre", "name": "Tait McKenzie Centre", "nativeCodes": ["TM"], "aliases": ["Athletics"], "way_id": "29004211"},
+            {"id": "petrie-science", "name": "Petrie Science & Engineering", "nativeCodes": ["PSE"], "aliases": ["Petrie"], "way_id": "29003993"},
+            {"id": "chemistry-building", "name": "Chemistry Building", "nativeCodes": ["CB"], "aliases": ["Chemistry"], "way_id": "29004010"},
+            {"id": "farquharson-building", "name": "Farquharson Life Sciences", "nativeCodes": ["FRQ"], "aliases": ["Farquharson"], "way_id": "29003897"},
+            {"id": "life-sciences-building", "name": "Life Sciences Building", "nativeCodes": ["LSB"], "aliases": ["Life Sciences"], "way_id": "96005349"},
+            {"id": "hne-building", "name": "Health, Nursing and Environmental Studies", "nativeCodes": ["HNE"], "aliases": ["HNES"], "way_id": "29004532"},
+            {"id": "lumbers-building", "name": "Lumbers Building", "nativeCodes": ["LUM"], "aliases": ["Lumbers"], "way_id": "33075236"},
+            {"id": "william-small-centre", "name": "William Small Centre", "nativeCodes": ["WSC"], "aliases": [], "way_id": "182217475"},
+            {"id": "york-lanes", "name": "York Lanes", "nativeCodes": ["YL"], "aliases": ["York Lanes Mall"], "way_id": "144346950"},
+            {"id": "vanier-college", "name": "Vanier College", "nativeCodes": ["VC"], "aliases": ["Vanier"], "way_id": "560851645"},
+            {"id": "founders-college", "name": "Founders College", "nativeCodes": ["FC"], "aliases": ["Founders"], "way_id": "560851644"},
+            {"id": "mclaughlin-college", "name": "McLaughlin College", "nativeCodes": ["MC"], "aliases": ["McLaughlin"], "way_id": "560851647"},
+            {"id": "bethune-college", "name": "Norman Bethune College", "nativeCodes": ["BC"], "aliases": ["Bethune"], "way_id": "182211062"},
+            {"id": "calumet-college", "name": "Calumet College", "nativeCodes": ["CC"], "aliases": ["Calumet"], "way_id": "1444061802"},
+            {"id": "stong-college", "name": "Stong College", "nativeCodes": ["SC"], "aliases": ["Stong"], "way_id": "182214986"},
+            {"id": "winters-college", "name": "Winters College", "nativeCodes": ["WC"], "aliases": ["Winters"], "way_id": "560851646"},
+            {"id": "bennett-centre", "name": "Bennett Centre for Student Services", "nativeCodes": ["BCSS"], "aliases": ["Bennett Centre"], "way_id": "29003481"},
+            {"id": "osgoode-hall", "name": "Ignat Kaneff Building - Osgoode Hall Law School", "nativeCodes": ["OSG"], "aliases": ["Osgoode Hall Law School", "Osgoode"], "way_id": "15398936"},
+            {"id": "centre-film-theatre", "name": "Centre for Film and Theatre", "nativeCodes": ["CFT"], "aliases": ["Film and Theatre"], "way_id": "29003113"},
+            {"id": "goldfarb-centre", "name": "Goldfarb Centre for Fine Arts", "nativeCodes": ["CFA"], "aliases": ["Fine Arts"], "way_id": "29003162"}
+        ]
+    },
+    {
+        "id": "mcmaster",
+        "name": "McMaster University",
+        "campus_name": "McMaster University main campus",
+        "bounds": [[-79.932, 43.256], [-79.910, 43.268]],
+        "osm_cache": "/tmp/mcmaster_osm.xml",
+        "official_source": {
+            "id": "mcmaster-official-map-2025",
+            "title": "McMaster University Campus Map",
+            "url": "https://www.mcmaster.ca/welcome/campusmap.cfm",
+            "retrievedAt": "2026-09-26",
+            "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+            "redistribution": "permitted",
+            "transformation": "Cross-checked individual factual building names, codes, and locations",
+            "attribution": "McMaster University"
+        },
+        "buildings": [
+            {"id": "burke-science-building", "name": "Burke Science Building", "nativeCodes": ["BSB"], "aliases": ["Science Building"], "way_id": "149066633"},
+            {"id": "john-hodgins-engineering", "name": "John Hodgins Engineering Building", "nativeCodes": ["JHE"], "aliases": ["Engineering"], "way_id": "149066642"},
+            {"id": "engineering-technology-building", "name": "Engineering Technology Building", "nativeCodes": ["ETB"], "aliases": [], "way_id": "183801474"},
+            {"id": "information-technology-building", "name": "Information Technology Building", "nativeCodes": ["ITB"], "aliases": [], "way_id": "43940355"},
+            {"id": "michael-degroote-centre", "name": "Michael G. DeGroote Centre for Learning and Discovery", "nativeCodes": ["MDCL"], "aliases": ["Centre for Learning and Discovery"], "way_id": "141427545"},
+            {"id": "arthur-bourns-building", "name": "Arthur Bourns Building", "nativeCodes": ["ABB"], "aliases": ["Bourns Building"], "way_id": "149062031"},
+            {"id": "mcmaster-student-centre", "name": "McMaster University Student Centre", "nativeCodes": ["MUSC"], "aliases": ["Student Centre"], "way_id": "259698144"},
+            {"id": "peter-george-centre", "name": "Peter George Centre for Living and Learning", "nativeCodes": ["PGCLL"], "aliases": ["PGCL", "PGC"], "way_id": "698951797"},
+            {"id": "lr-wilson-hall", "name": "L.R. Wilson Hall", "nativeCodes": ["LRW"], "aliases": ["Wilson Hall"], "way_id": "442833201"},
+            {"id": "kenneth-taylor-hall", "name": "Kenneth Taylor Hall", "nativeCodes": ["KTH"], "aliases": ["Taylor Hall"], "way_id": "183932633"},
+            {"id": "chester-new-hall", "name": "Chester New Hall", "nativeCodes": ["CNH"], "aliases": ["New Hall"], "way_id": "183932631"},
+            {"id": "togo-salmon-hall", "name": "Togo Salmon Hall", "nativeCodes": ["TSH"], "aliases": ["Salmon Hall"], "way_id": "316466800"},
+            {"id": "hamilton-hall", "name": "Hamilton Hall", "nativeCodes": ["HH"], "aliases": ["Mathematics Building"], "way_id": "43938260"},
+            {"id": "gilmour-hall", "name": "Gilmour Hall", "nativeCodes": ["GH"], "aliases": ["Administration"], "way_id": "259698121"},
+            {"id": "university-hall", "name": "University Hall", "nativeCodes": ["UH"], "aliases": [], "way_id": "183932635"},
+            {"id": "degroote-school-business", "name": "DeGroote School of Business", "nativeCodes": ["DSB"], "aliases": ["Business School"], "way_id": "183932632"},
+            {"id": "health-sciences-centre", "name": "Health Sciences Centre", "nativeCodes": ["HSC"], "aliases": ["MUMC", "McMaster Children's Hospital"], "way_id": "712110943"},
+            {"id": "david-braley-athletic-centre", "name": "David Braley Athletic Centre", "nativeCodes": ["DBAC"], "aliases": ["Athletic Centre"], "way_id": "183246580"},
+            {"id": "mills-memorial-library", "name": "Mills Memorial Library", "nativeCodes": ["MILLS"], "aliases": ["MML", "Mills Library"], "way_id": "34879765"},
+            {"id": "thode-library", "name": "H.G. Thode Library of Science & Engineering", "nativeCodes": ["THODE"], "aliases": ["Thode Library"], "way_id": "172996332"},
+            {"id": "institute-applied-health-sciences", "name": "Institute for Applied Health Sciences", "nativeCodes": ["IAHS"], "aliases": [], "way_id": "182622110"},
+            {"id": "general-sciences-building", "name": "General Sciences Building", "nativeCodes": ["GSB"], "aliases": ["General Sciences"], "way_id": "157967533"},
+            {"id": "gerald-hatch-centre", "name": "Gerald Hatch Centre", "nativeCodes": ["GHC"], "aliases": ["Hatch Centre"], "way_id": "953104821"},
+            {"id": "mcmaster-museum-art", "name": "McMaster Museum of Art", "nativeCodes": ["MMA"], "aliases": ["Art Museum"], "way_id": "183246593"},
+            {"id": "ivor-wynne-centre", "name": "Ivor Wynne Centre", "nativeCodes": ["IWC"], "aliases": [], "way_id": "259698129"},
+            {"id": "life-sciences-building", "name": "Life Sciences Building", "nativeCodes": ["LSB"], "aliases": ["Life Sciences"], "way_id": "32611695"},
+            {"id": "psychology-building", "name": "Psychology Building", "nativeCodes": ["PC"], "aliases": ["Psychology"], "way_id": "43937996"},
+            {"id": "applied-dynamics-laboratory", "name": "Applied Dynamics Laboratory", "nativeCodes": ["ADL"], "aliases": [], "way_id": "43938866"},
+            {"id": "alumni-memorial-hall", "name": "Alumni Memorial Hall", "nativeCodes": ["AMH"], "aliases": [], "way_id": "43940354"},
+            {"id": "tandem-accelerator-building", "name": "Tandem Accelerator Building", "nativeCodes": ["TAB"], "aliases": [], "way_id": "183677692"},
+            {"id": "commons-building", "name": "Commons Building", "nativeCodes": ["COMMONS"], "aliases": [], "way_id": "259698072"},
+            {"id": "refectory", "name": "Refectory", "nativeCodes": ["REF"], "aliases": [], "way_id": "183246595"}
+        ]
     }
 ]
 
@@ -193,7 +297,7 @@ def build_university(cfg):
             "id": osm_source_id,
             "title": f"OpenStreetMap {cfg['name']} Campus Data",
             "url": "https://www.openstreetmap.org",
-            "retrievedAt": "2026-09-24",
+            "retrievedAt": cfg["official_source"]["retrievedAt"],
             "licenseOrTerms": "Open Database License (ODbL) 1.0",
             "redistribution": "permitted",
             "transformation": "Extracted campus building footprints, verified entrance nodes, and outdoor pedestrian path ways",
@@ -404,7 +508,7 @@ def build_university(cfg):
     print(f"  Added {len(buildings)} buildings and {len(entrances)} entrances")
     print(f"  Graph has {len(path_nodes_dict)} nodes and {len(path_edges_list)} edges")
 
-    campus_id = "waterloo" if uid == "laurier" else ("main" if uid == "carleton" else uid)
+    campus_id = "waterloo" if uid == "laurier" else ("keele" if uid == "york" else ("mcmaster" if uid == "mcmaster" else ("main" if uid == "carleton" else uid)))
     campus_data = {
         "schemaVersion": 1,
         "institution": uid,

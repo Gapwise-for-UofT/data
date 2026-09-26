@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "institution": "york",
+  "sources": [
+    {
+      "id": "york-official-map-2025",
+      "title": "York University Keele Campus Map",
+      "url": "https://maps.info.yorku.ca/keele-campus/",
+      "retrievedAt": "2026-09-26",
+      "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+      "redistribution": "permitted",
+      "transformation": "Cross-checked individual factual building names, codes, and locations",
+      "attribution": "York University"
+    }
+  ],
+  "terms": [],
+  "courses": []
+}
