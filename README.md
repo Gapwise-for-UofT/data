@@ -4,9 +4,9 @@
 
 # Gapwise Data
 
-### The canonical open-data and provenance layer behind Gapwise.
+### Canada's largest free and open multi-university campus navigation dataset.
 
-**A transparent home for the university campus data that powers Gapwise: buildings, geometry, routing evidence, provenance, validation, attribution, and reuse.**
+**Canada's largest free and open multi-university campus navigation dataset: auditable building identity, footprints, verified exterior entrances, accessible routes, provenance, schemas, and open contribution tooling across Canadian universities.**
 
 [![Data](https://img.shields.io/badge/Data-data.gapwise.ca-B42335?style=for-the-badge&logo=databricks&logoColor=white)](https://data.gapwise.ca)
 [![Docs](https://img.shields.io/badge/Docs-data_guides-111111?style=for-the-badge)](https://docs.gapwise.ca/data/)
