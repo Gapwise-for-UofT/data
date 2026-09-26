@@ -23,15 +23,19 @@
 
 ## What Gapwise Data is
 
-`data` is the **canonical repository for campus facts and geometry used by Gapwise**. It contains campus-scoped building registries, verified entrances, and source-backed map geometry across **7 universities and 9 campus models**:
+`data` is the **canonical repository for campus facts and geometry used by Gapwise**. It contains campus-scoped building registries, verified entrances, and source-backed map geometry across **11 universities and 13 campus models**:
 
-1. **University of Toronto**: UTM, UTSG, UTSC
+1. **University of Toronto**: Mississauga, St. George, and Scarborough
 2. **Carleton University**: Main Campus
 3. **Toronto Metropolitan University**: Downtown Campus
 4. **Queen's University**: Kingston Campus
 5. **Wilfrid Laurier University**: Waterloo Campus
 6. **York University**: Keele Campus
 7. **McMaster University**: Hamilton Campus
+8. **Western University**: London Campus
+9. **University of Guelph**: Guelph Campus
+10. **University of Ottawa**: Downtown Campus
+11. **Brock University**: St. Catharines Campus
 
 The validated snapshots under [`universities/`](universities/) and [`data/`](data/) include source registers, schemas, footprints, and validation tests. Each campus model represents pedestrian networks, building geometries, entrance coordinates, and routing topologies tailored to that campus, with explicit representation of route uncertainty and entrance verification state.
 

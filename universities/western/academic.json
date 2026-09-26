@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "institution": "western",
+  "sources": [
+    {
+      "id": "western-official-map-2025",
+      "title": "Western University Campus Map",
+      "url": "https://www.uwo.ca/about/visit/maps.html",
+      "retrievedAt": "2026-09-26",
+      "licenseOrTerms": "Published factual building names and codes; map artwork is not copied",
+      "redistribution": "permitted",
+      "transformation": "Cross-checked individual factual building names, codes, and locations",
+      "attribution": "Western University"
+    }
+  ],
+  "terms": [],
+  "courses": []
+}

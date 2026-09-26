@@ -16,6 +16,10 @@ import queensCampus from '../universities/queens/campus.json';
 import laurierCampus from '../universities/laurier/campus.json';
 import yorkCampus from '../universities/york/campus.json';
 import mcmasterCampus from '../universities/mcmaster/campus.json';
+import westernCampus from '../universities/western/campus.json';
+import guelphCampus from '../universities/guelph/campus.json';
+import uottawaCampus from '../universities/uottawa/campus.json';
+import brockCampus from '../universities/brock/campus.json';
 
 const utsgFootprints = JSON.parse(utsgFootprintsJson);
 const utscFootprints = JSON.parse(utscFootprintsJson);
@@ -106,6 +110,34 @@ const MCMASTER_FALLBACK = {
   maxLat: 43.268,
 };
 
+const WESTERN_FALLBACK = {
+  minLon: -81.285,
+  maxLon: -81.265,
+  minLat: 42.996,
+  maxLat: 43.015,
+};
+
+const GUELPH_FALLBACK = {
+  minLon: -80.236,
+  maxLon: -80.218,
+  minLat: 43.524,
+  maxLat: 43.538,
+};
+
+const UOTTAWA_FALLBACK = {
+  minLon: -75.690,
+  maxLon: -75.674,
+  minLat: 45.416,
+  maxLat: 45.426,
+};
+
+const BROCK_FALLBACK = {
+  minLon: -79.256,
+  maxLon: -79.240,
+  minLat: 43.112,
+  maxLat: 43.125,
+};
+
 const TRI_CAMPUS_REGISTRIES = {
   utsg: utsgRegistry,
   utsc: utscRegistry,
@@ -188,6 +220,10 @@ const QUEENS_FOOTPRINTS = universityFootprints(queensCampus);
 const LAURIER_FOOTPRINTS = universityFootprints(laurierCampus);
 const YORK_FOOTPRINTS = universityFootprints(yorkCampus);
 const MCMASTER_FOOTPRINTS = universityFootprints(mcmasterCampus);
+const WESTERN_FOOTPRINTS = universityFootprints(westernCampus);
+const GUELPH_FOOTPRINTS = universityFootprints(guelphCampus);
+const UOTTAWA_FOOTPRINTS = universityFootprints(uottawaCampus);
+const BROCK_FOOTPRINTS = universityFootprints(brockCampus);
 
 function importedBuildingsForCampus(campusId) {
   const registry = TRI_CAMPUS_REGISTRIES[campusId];
@@ -283,6 +319,42 @@ export const UNIVERSITIES = [
       { id: 'mcmaster', name: 'Main Campus', shortName: 'McMaster' },
     ],
   },
+  {
+    id: 'western',
+    name: 'Western University',
+    shortName: 'Western',
+    defaultCampus: 'western',
+    campuses: [
+      { id: 'western', name: 'London Campus', shortName: 'Western' },
+    ],
+  },
+  {
+    id: 'guelph',
+    name: 'University of Guelph',
+    shortName: 'Guelph',
+    defaultCampus: 'guelph',
+    campuses: [
+      { id: 'guelph', name: 'Guelph Campus', shortName: 'Guelph' },
+    ],
+  },
+  {
+    id: 'uottawa',
+    name: 'University of Ottawa',
+    shortName: 'uOttawa',
+    defaultCampus: 'uottawa',
+    campuses: [
+      { id: 'uottawa', name: 'Downtown Ottawa Campus', shortName: 'uOttawa' },
+    ],
+  },
+  {
+    id: 'brock',
+    name: 'Brock University',
+    shortName: 'Brock',
+    defaultCampus: 'brock',
+    campuses: [
+      { id: 'brock', name: 'St. Catharines Campus', shortName: 'Brock' },
+    ],
+  },
 ];
 
 export const CAMPUSES = {
@@ -358,6 +430,38 @@ export const CAMPUSES = {
     bounds: boundsFromFeatures(MCMASTER_FOOTPRINTS, MCMASTER_FALLBACK),
     tileZoom: 16,
   },
+  western: {
+    id: 'western',
+    universityId: 'western',
+    shortName: 'Western',
+    name: 'Western University',
+    bounds: boundsFromFeatures(WESTERN_FOOTPRINTS, WESTERN_FALLBACK),
+    tileZoom: 16,
+  },
+  guelph: {
+    id: 'guelph',
+    universityId: 'guelph',
+    shortName: 'Guelph',
+    name: 'University of Guelph',
+    bounds: boundsFromFeatures(GUELPH_FOOTPRINTS, GUELPH_FALLBACK),
+    tileZoom: 16,
+  },
+  uottawa: {
+    id: 'uottawa',
+    universityId: 'uottawa',
+    shortName: 'uOttawa',
+    name: 'University of Ottawa',
+    bounds: boundsFromFeatures(UOTTAWA_FOOTPRINTS, UOTTAWA_FALLBACK),
+    tileZoom: 16,
+  },
+  brock: {
+    id: 'brock',
+    universityId: 'brock',
+    shortName: 'Brock',
+    name: 'Brock University',
+    bounds: boundsFromFeatures(BROCK_FOOTPRINTS, BROCK_FALLBACK),
+    tileZoom: 16,
+  },
 };
 
 export const CAMPUS_IDS = Object.keys(CAMPUSES);
@@ -393,6 +497,10 @@ export function canonicalBuildingsForCampus(campusId) {
   if (campusId === 'laurier') return universityBuildings(laurierCampus, 'laurier');
   if (campusId === 'york' || campusId === 'keele') return universityBuildings(yorkCampus, 'york');
   if (campusId === 'mcmaster') return universityBuildings(mcmasterCampus, 'mcmaster');
+  if (campusId === 'western') return universityBuildings(westernCampus, 'western');
+  if (campusId === 'guelph') return universityBuildings(guelphCampus, 'guelph');
+  if (campusId === 'uottawa') return universityBuildings(uottawaCampus, 'uottawa');
+  if (campusId === 'brock') return universityBuildings(brockCampus, 'brock');
   return [];
 }
 
@@ -405,6 +513,10 @@ export function canonicalFootprintsForCampus(campusId) {
   if (campusId === 'laurier') return LAURIER_FOOTPRINTS;
   if (campusId === 'york' || campusId === 'keele') return YORK_FOOTPRINTS;
   if (campusId === 'mcmaster') return MCMASTER_FOOTPRINTS;
+  if (campusId === 'western') return WESTERN_FOOTPRINTS;
+  if (campusId === 'guelph') return GUELPH_FOOTPRINTS;
+  if (campusId === 'uottawa') return UOTTAWA_FOOTPRINTS;
+  if (campusId === 'brock') return BROCK_FOOTPRINTS;
   return [];
 }
 
@@ -416,6 +528,10 @@ export function canonicalEntrancesForCampus(campusId) {
   if (campusId === 'laurier') return universityEntrances(laurierCampus);
   if (campusId === 'york' || campusId === 'keele') return universityEntrances(yorkCampus);
   if (campusId === 'mcmaster') return universityEntrances(mcmasterCampus);
+  if (campusId === 'western') return universityEntrances(westernCampus);
+  if (campusId === 'guelph') return universityEntrances(guelphCampus);
+  if (campusId === 'uottawa') return universityEntrances(uottawaCampus);
+  if (campusId === 'brock') return universityEntrances(brockCampus);
   return [];
 }
 
